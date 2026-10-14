@@ -154,10 +154,11 @@
       p.free = true;
     });
     free.forEach(function (p) {
-      // start between the region's anchor and the pinned people this one is tied to
+      // villagers start between the village anchor and the pinned people they are
+      // tied to; people from outlying regions start in their own region
       var nb = neighbours(p).filter(function (q) { return !q.free; });
       var sx = p.ax, sy = p.ay;
-      if (nb.length) {
+      if (nb.length && p.group === 'akmengals') {
         sx = (p.ax + nb.reduce(function (t, q) { return t + q.x; }, 0) / nb.length) / 2;
         sy = (p.ay + nb.reduce(function (t, q) { return t + q.y; }, 0) / nb.length) / 2;
       }
@@ -168,14 +169,18 @@
     });
     for (var iter = 0; iter < 500; iter++) {
       free.forEach(function (p) {
-        p.x += (p.ax - p.x) * 0.006;
-        p.y += (p.ay - p.y) * 0.006;
+        // villagers settle near the people they are tied to; anyone from an
+        // outlying region (Purmale, far away) stays in that region
+        var home = p.group === 'akmengals' ? 0.006 : 0.03;
+        var ties = p.group === 'akmengals' ? 0.01 : 0.003;
+        p.x += (p.ax - p.x) * home;
+        p.y += (p.ay - p.y) * home;
         var nb = neighbours(p);
         if (nb.length) {
           var cx = 0, cy = 0;
           nb.forEach(function (q) { cx += q.x; cy += q.y; });
-          p.x += (cx / nb.length - p.x) * 0.01;
-          p.y += (cy / nb.length - p.y) * 0.01;
+          p.x += (cx / nb.length - p.x) * ties;
+          p.y += (cy / nb.length - p.y) * ties;
         }
         obstacles.forEach(function (o) {
           var sep = separation(box(p), o);

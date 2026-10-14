@@ -90,7 +90,7 @@ STONETOP.events = [
     glyph: 'mound', people: ['zemnieks', 'jorats', 'made-jete', 'bevians', 'gars']
   },
   {
-    id: 'pavasaris', era: 'kampana', when: 'Pavasaris', yearsAgo: 0, session: 0,
+    id: 'pavasaris', era: 'kampana', when: 'Pavasaris', yearsAgo: null, session: 0,
     title: 'Pavasaris uzplaukst',
     text: 'Ziema atkāpjas, un pavasaris nes interesantas ziņas — un draudus. Te sākas mūsu stāsts.',
     glyph: 'sun', people: ['bevians', 'made-jete', 'runa']

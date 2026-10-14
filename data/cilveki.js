@@ -30,8 +30,8 @@ window.STONETOP = window.STONETOP || {};
 
 STONETOP.groups = {
   akmengals: { name: 'Akmeņgals', x: 900, y: 620 },
-  purmale:   { name: 'Purmale',   x: 1480, y: 1010 },
-  talume:    { name: 'Svešumā',   x: 200,  y: 960 }
+  purmale:   { name: 'Purmale',   x: 1650, y: 870 },
+  talume:    { name: 'Svešumā',   x: 340,  y: 1010 }
 };
 
 STONETOP.people = [
