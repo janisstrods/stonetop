@@ -1,0 +1,289 @@
+/* ==========================================================================
+   Chronicle (timeline)
+   ========================================================================== */
+
+.chronicle {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(28px, 6vh, 56px) 16px 72px;
+}
+
+/* ---- heading ------------------------------------------------------------ */
+.chronicle-head { text-align: center; }
+.chronicle-head .eyebrow {
+  margin: 0;
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  color: var(--ink-soft);
+}
+.chronicle-head h2 {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(44px, 8.5vw, 82px);
+  line-height: 1;
+  color: var(--ink-strong);
+  text-shadow: 0 1px 0 rgba(255, 248, 228, 0.7);
+}
+.chronicle-head .ornament-rule { width: min(360px, 80%); margin: 16px auto 0; }
+.lede {
+  max-width: 50ch;
+  margin: 16px auto 0;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  text-wrap: balance;
+}
+
+/* ---- the carved staff --------------------------------------------------- */
+.timeline {
+  position: relative;
+  margin-top: 44px;
+  padding-bottom: 8px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: -40px;
+  left: 50%;
+  width: 16px;
+  transform: translateX(-50%);
+  border: 1.5px solid var(--ink);
+  border-radius: 9px;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 25px, rgba(74, 65, 40, 0.55) 25px 26.5px, transparent 26.5px 31px),
+    linear-gradient(90deg, #b88c50, #e7cf9b 38%, #d9ba80 64%, #ad8248);
+  box-shadow: 2px 3px 0 rgba(74, 65, 40, 0.16);
+}
+
+/* ---- eras --------------------------------------------------------------- */
+.era-head {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 18px 0 26px;
+}
+.era + .era .era-head { margin-top: 46px; }
+.era-head h3 { margin: 0; }
+.era-head h3 span {
+  display: inline-block;
+  padding: 8px 34px 9px;
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: clamp(19px, 3vw, 24px);
+  letter-spacing: 0.16em;
+  color: var(--paper-light);
+  background: var(--ink);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 50%, 100% 100%, 0 100%, 14px 50%);
+}
+.era-head p {
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 2px 12px;
+  font-style: italic;
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  background: rgba(243, 225, 182, 0.94);
+  border-radius: 10px;
+}
+
+/* ---- events ------------------------------------------------------------- */
+.events { list-style: none; margin: 0; padding: 0; }
+
+.event {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 124px minmax(0, 1fr);
+  align-items: center;
+  margin: 6px 0;
+  scroll-margin-top: 90px;
+}
+.ev-mark { grid-column: 2; grid-row: 1; justify-self: center; position: relative; z-index: 1; }
+.side-left .ev-card { grid-column: 1; grid-row: 1; justify-self: end; }
+.side-right .ev-card { grid-column: 3; grid-row: 1; justify-self: start; }
+
+.ev-medal { display: block; width: 78px; height: 78px; overflow: visible; color: var(--ink); }
+.ev-medal .disc { fill: #f8ecd0; stroke: var(--ink); stroke-width: 2.6; }
+.ev-medal .ring { fill: none; stroke: var(--ink); stroke-width: 0.9; opacity: 0.65; }
+.ev-medal .rim { fill: none; stroke: var(--ink); stroke-width: 6; stroke-dasharray: 1.3 3.6; }
+.ev-medal.is-campaign .disc { stroke-width: 3.2; }
+
+.ev-card {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  padding: 17px 20px 16px;
+  background: linear-gradient(180deg, rgba(251, 243, 222, 0.9), rgba(246, 231, 196, 0.8));
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s ease;
+}
+.ev-card::before {
+  /* inner ruled frame */
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--ink-faint);
+  pointer-events: none;
+}
+.ev-card::after {
+  /* the thread tying the card to the staff */
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 23px;
+  border-top: 1.5px dashed var(--ink);
+}
+.side-left .ev-card::after { right: -24.5px; }
+.side-right .ev-card::after { left: -24.5px; }
+
+.is-campaign .ev-card {
+  border-width: 2px;
+  background: linear-gradient(180deg, rgba(253, 248, 233, 0.96), rgba(249, 236, 205, 0.9));
+}
+
+.ev-when {
+  margin: 0;
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+.ev-session { letter-spacing: 0.06em; }
+.ev-card h4 {
+  margin: 2px 0 6px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--ink-strong);
+}
+.ev-anchor { text-decoration: none; }
+.ev-anchor:hover { color: var(--c-love); }
+.ev-text { margin: 0; font-size: 16px; line-height: 1.62; }
+
+.chips {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 11px 2px 3px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15.5px;
+  line-height: 1.4;
+  text-decoration: none;
+  color: var(--ink-strong);
+  background: rgba(255, 250, 235, 0.7);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.chip svg { width: 25px; height: 25px; flex: none; color: var(--ink); }
+.chip .disc { fill: #f8ecd0; stroke: var(--ink); stroke-width: 3; }
+.chip.kind-pc .disc { stroke-width: 4.5; }
+.chip.kind-shadow .disc { stroke-dasharray: 5 4; }
+.chip.kind-shadow span { font-family: var(--font-body); font-style: italic; font-weight: 400; font-size: 14.5px; }
+.chip:hover { border-color: var(--ink); color: var(--c-love); background: #fff8e8; }
+
+/* arriving from the map */
+.event:target .ev-card {
+  box-shadow: 0 0 0 3px rgba(162, 59, 44, 0.35), var(--shadow);
+}
+.event:target .ev-medal .disc { stroke: var(--c-love); }
+
+/* ---- gaps between events ------------------------------------------------ */
+.gap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin: 2px 0;
+}
+.gap span {
+  padding: 1px 12px 2px;
+  font-style: italic;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  background: rgba(243, 225, 182, 0.96);
+  border: 1px dotted var(--rule);
+  border-radius: 12px;
+}
+
+/* ---- the end ------------------------------------------------------------ */
+.chronicle-end {
+  position: relative;
+  z-index: 1;
+  margin-top: 44px;
+  text-align: center;
+}
+.end-sun {
+  width: 64px;
+  height: 64px;
+  padding: 6px;
+  color: var(--ink);
+  background: var(--paper);
+  border-radius: 50%;
+}
+.chronicle-end p {
+  margin: 4px 0 0;
+  font-family: var(--font-hand);
+  font-style: italic;
+  font-size: 24px;
+  color: var(--ink-soft);
+}
+
+/* ---- reveal on scroll --------------------------------------------------- */
+.will-reveal .event,
+.will-reveal .gap,
+.will-reveal .era-head {
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.pending {
+  opacity: 0;
+  transform: translateY(16px);
+}
+@media print {
+  .pending { opacity: 1; transform: none; }
+}
+
+/* ---- narrow screens: the staff runs down the left edge ------------------ */
+@media (max-width: 760px) {
+  .timeline::before { left: 32px; width: 13px; }
+
+  .event {
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 14px;
+    align-items: start;
+  }
+  .ev-mark { grid-column: 1; padding-top: 14px; }
+  .side-left .ev-card,
+  .side-right .ev-card { grid-column: 2; justify-self: stretch; max-width: none; }
+  .side-left .ev-card::after,
+  .side-right .ev-card::after { left: -15.5px; right: auto; width: 14px; top: 44px; }
+  .ev-medal { width: 60px; height: 60px; }
+
+  .ev-card { padding: 15px 16px 14px; }
+  .ev-card h4 { font-size: 23px; }
+  .ev-text { font-size: 15.5px; }
+
+  .gap { justify-content: flex-start; padding-left: 78px; }
+  .era-head { text-align: left; padding-left: 6px; }
+  .era-head p { margin-left: 52px; }
+  .chronicle-end { text-align: left; padding-left: 0; }
+  .end-sun { margin-left: 6px; }
+  .chronicle-end p { margin-left: 4px; }
+}
