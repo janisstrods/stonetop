@@ -21,7 +21,7 @@
   function gapText(prev, next) {
     if (typeof prev.yearsAgo !== 'number' || typeof next.yearsAgo !== 'number') return '';
     var gap = prev.yearsAgo - next.yearsAgo;
-    if (gap <= 0) return 'tajā pašā laikā';
+    if (gap <= 0) return '';   // same moment, or in play where years don't apply
     if (gap < 0.2) return 'drīz pēc tam';
     if (gap < 0.9) return 'pēc dažiem mēnešiem';
     var n = Math.round(gap);

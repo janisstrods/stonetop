@@ -12,7 +12,7 @@ There's no build step and there are no dependencies. Fonts come from Google Font
 
 ## Updating the content
 
-All the content is Latvian and lives in two files. You don't need to touch the HTML, CSS or JS to add people or events.
+All the content is Latvian and lives in two files. The English notes in the vault are the source of truth. The Latvian wording follows [GLOSSARY.md](GLOSSARY.md), which holds the agreed name spellings, declensions, terms and style rules. You don't need to touch the HTML, CSS or JS to add people or events.
 
 ### `data/cilveki.js`: people and relationships
 
@@ -65,7 +65,7 @@ Add events to `STONETOP.events` in chronological order (oldest first):
 ```js
 {
   id: 'kalves-ugunsgreks', era: 'kampana', when: 'Vasaras sākumā', session: 3,
-  yearsAgo: 0,                          // optional; used for the "pēc kādiem 8 gadiem" markers between events
+  yearsAgo: null,                       // optional; years before the campaign, for the "pēc kādiem astoņiem gadiem" markers
   title: 'Ugunsgrēks kalvē',
   text: 'Kas notika.',
   glyph: 'sun',
