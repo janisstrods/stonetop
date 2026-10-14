@@ -94,6 +94,11 @@
     </nav>
   </main>
 
+  <footer class="landing-foot">
+    <p id="site-version"></p>
+  </footer>
+
+  <script src="data/versija.js"></script>
   <script src="assets/js/glyphs.js"></script>
   <script>
     // Drop a few of the shared ink emblems into the two illustrations.
@@ -107,6 +112,17 @@
       document.getElementById('art-events').innerHTML = ev.map(function (e) {
         return '<path class="tie" d="M' + e[1] + ' ' + (e[2] + 17) + ' V' + (e[2] + 37) + '"/>' + g(e[0], e[1], e[2], 30);
       }).join('');
+
+      // Version and date of the last update, from data/versija.js.
+      var v = STONETOP.version;
+      if (v) {
+        var months = ['janvārī', 'februārī', 'martā', 'aprīlī', 'maijā', 'jūnijā',
+                      'jūlijā', 'augustā', 'septembrī', 'oktobrī', 'novembrī', 'decembrī'];
+        var d = v.updated.split('-').map(Number);
+        document.getElementById('site-version').innerHTML =
+          '<span>Versija ' + v.number + '</span>&nbsp;· <span>atjaunināta <time datetime="' + v.updated + '">' +
+          d[0] + '. gada ' + d[2] + '. ' + months[d[1] - 1] + '</time></span>';
+      }
     })();
   </script>
 </body>

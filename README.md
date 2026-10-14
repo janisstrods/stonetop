@@ -12,7 +12,7 @@ There's no build step and there are no dependencies. Fonts come from Google Font
 
 ## Updating the content
 
-All the content is Latvian and lives in two files. The English notes in the vault are the source of truth. The Latvian wording follows [GLOSSARY.md](GLOSSARY.md), which holds the agreed name spellings, declensions, terms and style rules. You don't need to touch the HTML, CSS or JS to add people or events.
+All the content is Latvian and lives in two files (plus the version line, below). The English notes in the vault are the source of truth. The Latvian wording follows [GLOSSARY.md](GLOSSARY.md), which holds the agreed name spellings, declensions, terms and style rules. You don't need to touch the HTML, CSS or JS to add people or events.
 
 ### `data/cilveki.js`: people and relationships
 
@@ -74,6 +74,17 @@ Add events to `STONETOP.events` in chronological order (oldest first):
 ```
 
 `era: 'pirms'` is before the campaign, and `era: 'kampana'` is anything that happens in play. A person's map card automatically lists every event they appear in.
+
+### `data/versija.js`: version line
+
+The landing page's footer shows the site's version and the date of the last update, e.g. *Versija 1.4 · atjaunināta 2026. gada 14. oktobrī*. Change both fields every time you publish:
+
+```js
+STONETOP.version = {
+  number: '1.5',          // add one after the dot each publish (1.9 → 1.10); 2.0 only for a big rework
+  updated: '2026-10-21'   // the publish date, YYYY-MM-DD; the page writes it out in Latvian
+};
+```
 
 ### Glyphs
 

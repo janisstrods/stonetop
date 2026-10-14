@@ -74,6 +74,15 @@ The GM fixes the spellings. Pronouns follow the name ending: -s/-š/-is/-us/-ss 
 | distils remedies | tecina zāles |
 | playbooks | Maršals, Meklētāja, Svētītā (kicker "Spēlētāja tēls · …") |
 
+## Site furniture
+
+| English | Latvian (site) |
+| --- | --- |
+| the whole website | vietne; one page of it: lapa |
+| site version (landing-page footer) | versija: „Versija 1.4 · atjaunināta 2026. gada 14. oktobrī” |
+| updated (of the site) | atjaunināta (feminine, agrees with versija/vietne); never „atjaunota” (that means restored) |
+| a full date | „2026. gada 14. oktobrī”: locative month (janvārī, februārī, martā, aprīlī, maijā, jūnijā, jūlijā, augustā, septembrī, oktobrī, novembrī, decembrī), no leading zero, „gada” spelled out |
+
 ## Relationship types (map legend)
 
 | `type` | Latvian |
