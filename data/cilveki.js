@@ -9,7 +9,8 @@
     id       – īss, unikāls identifikators bez diakritiskajām zīmēm, piem. 'made-jete'
     name     – vārds, kā tas redzams kartē
     kind     – 'pc' (spēlētāja tēls) | 'npc' | 'shadow' (bezvārda vai nezināms tēls)
-    group    – reģions kartē: 'akmengals' | 'purmale' | 'talume'
+               | 'place' (vieta; kartē rombs, statuss nav vajadzīgs)
+    group    – reģions kartē: 'akmengals' | 'mezs' | 'purmale' | 'talume'
     role     – amats vai loma, īsi (redzams zem vārda)
     playbook – tikai spēlētāju tēliem
     glyph    – zīmes nosaukums no assets/js/glyphs.js
@@ -21,6 +22,7 @@
   SAITE (bond):
     a, b     – abu tēlu id
     type     – 'kin' | 'love' | 'friend' | 'oath' | 'duty' | 'tension' | 'mystery' | 'sorcery'
+               | 'place' (tēla saite ar vietu)
     label    – īss uzraksts uz līnijas
     aIs, bIs – (pēc izvēles) kas A ir attiecībā pret B un kas B – pret A, piem. 'tēvs' / 'dēls'
     text     – (pēc izvēles) teikums vai divi par šo saiti
@@ -30,6 +32,7 @@ window.STONETOP = window.STONETOP || {};
 
 STONETOP.groups = {
   akmengals: { name: 'Akmeņgals', x: 900, y: 620 },
+  mezs:      { name: 'Lielais mežs', x: 1470, y: 410 },
   purmale:   { name: 'Purmale',   x: 1650, y: 870 },
   talume:    { name: 'Svešumā',   x: 340,  y: 1010 }
 };
@@ -40,13 +43,13 @@ STONETOP.people = [
     id: 'runa', name: 'Rūna', kind: 'pc', group: 'akmengals',
     playbook: 'Svētītā', role: 'Danu priestere', glyph: 'sapling', status: 'alive',
     x: 900, y: 450,
-    about: 'Meža bērns ar ugunīgi rudiem matiem — tādu nav nevienam citam Akmeņgalā. Ciemā viņa ieradās ap desmit gadu vecumā un no agrākās dzīves atceras vien mežu un mīkstas sūnas. Jau toreiz viņai bija līdzi svētais maciņš — kāds dzimtas mantojums. Viņa ir ceļvede medniekiem un meža velšu vācējiem un sagaida, ka tie dzīvos pēc dabas un Danu likumiem. Kopš rituāla pirms diviem gadiem viņa ir Danu augstā priestere Akmeņgalā. Ļaudis nes viņai ziedojumus: augļus un svaigu lietusūdeni. Viņai allaž līdzās ir divi mastifi.'
+    about: 'Meža bērns ar ugunīgi rudiem matiem — tādu nav nevienam citam Akmeņgalā. Ciemā viņa ieradās ap desmit gadu vecumā un no agrākās dzīves atceras vien mežu un mīkstas sūnas. Jau toreiz viņai bija līdzi svētais maciņš — laikam dzimtas mantojums. Viņa ir ceļvede medniekiem un meža velšu vācējiem un sagaida, ka tie dzīvos pēc dabas un Danu likumiem. Kopš rituāla pirms diviem gadiem viņa ir Danu augstā priestere Akmeņgalā. Ļaudis nes viņai ziedojumus: augļus un svaigu lietusūdeni. Viņai allaž līdzās ir divi mastifi, Ville un Vallo.'
   },
   {
     id: 'bevians', name: 'Bevians', kind: 'pc', group: 'akmengals',
     playbook: 'Maršals', role: 'vienības vadonis', glyph: 'shield', status: 'alive',
     x: 720, y: 690,
-    about: 'Plecīgs vīrs ar brūniem matiem, kādus divdesmit septiņus gadus vecs. Viņa dzimta jau labu laiku vada kādu no Akmeņgala vienībām; nu jau mēnesi tās priekšgalā ir viņš pats. Prot lasīt un rakstīt — Akmeņgalā to māk tikai katrs piektais. Diezgan nežēlīgs: viņaprāt, mērķis attaisno līdzekļus. Danu viņam ir tuva, bet Arata taisnīgums nav pie sirds. Nēsā medaljonu, kas dzimtā gājis no paaudzes paaudzē; uz tā ir kāda zīme. Viņš ir pārliecināts, ka krinvini kaut ko perina.'
+    about: 'Plecīgs vīrs ar brūniem matiem, kādus divdesmit septiņus gadus vecs. Viņa dzimta jau labu laiku vada Kirkaļus, vienu no Akmeņgala vienībām, un nu jau mēnesi to priekšgalā ir viņš pats. Prot lasīt un rakstīt — Akmeņgalā to māk tikai katrs piektais. Diezgan nežēlīgs: viņaprāt, mērķis attaisno līdzekļus. Danu viņam ir tuva, bet Aratisa taisnīgums nav pie sirds. Nēsā medaljonu, kas dzimtā gājis no paaudzes paaudzē; uz tā ir kāda zīme. Viņš ir pārliecināts, ka krinvini kaut ko perina.'
   },
   {
     id: 'made-jete', name: 'Made Jete', kind: 'pc', group: 'akmengals',
@@ -84,15 +87,15 @@ STONETOP.people = [
   /* ---------- Gvendolīnas saime ---------- */
   {
     id: 'gvendolina', name: 'Gvendolīna', kind: 'npc', group: 'akmengals',
-    role: 'medniece', glyph: 'bow', status: 'alive',
+    role: 'medniece', glyph: 'bow', status: 'missing',
     x: 620, y: 340,
-    about: 'Lieliska medniece, kas mežā jūtas kā mājās. Rūnas tuvā draudzene un vienaudze, Hansa sieva, Otto un Paula māte.'
+    about: 'Lieliska medniece, kas mežā jūtas kā mājās. Rūnas tuvā draudzene un vienaudze, Hansa sieva, Otto un Paula māte. Šopavasar viņa ar Paulu devās uz Bālo kalnu un salasīja augļus no trim kokiem, kas tur aug. Tad krinvini viņu paņēma, bet Pauls aizbēga.'
   },
   {
     id: 'hanss', name: 'Hanss', kind: 'npc', group: 'akmengals',
     role: 'zemnieks un karotājs', glyph: 'sickle', status: 'alive',
     x: 440, y: 400,
-    about: 'Godīgs zemnieks, kas dien Beviana vienībā. Gvendolīnas vīrs, Otto un Paula tēvs.'
+    about: 'Godīgs zemnieks, kas dien Beviana vienībā. Gvendolīnas vīrs, Otto un Paula tēvs. Kad krinvini paņēma Gvendolīnu, viņš pieprasīja, lai Bevians rīkojas, un kopā ar vienību devās sievu meklēt.'
   },
   {
     id: 'otto', name: 'Otto', kind: 'npc', group: 'akmengals',
@@ -104,7 +107,7 @@ STONETOP.people = [
     id: 'pauls', name: 'Pauls', kind: 'npc', group: 'akmengals',
     role: 'zēns', glyph: 'paw', status: 'alive',
     x: 780, y: 240,
-    about: 'Gvendolīnas un Hansa dēls. Dievina Rūnu un viņas suņus, nāk viņai līdzi medībās un var bez gala klausīties stāstus par Lielo mežu.'
+    about: 'Gvendolīnas un Hansa dēls. Dievina Rūnu un viņas suņus, nāk viņai līdzi medībās un var bez gala klausīties stāstus par Lielo mežu. Kad krinvini paņēma viņa māti, Pauls atskrēja mājās nobrāzies, saplēstās drēbēs un bez siltās jakas, cieši turēdams auduma tarbu ar Bālā kalna augļiem. Viņš saka, ka ne viņš, ne māte tos nav ēduši.'
   },
 
   /* ---------- Ciems ---------- */
@@ -136,7 +139,7 @@ STONETOP.people = [
     id: 'adarina', name: 'Adarīna', kind: 'npc', group: 'akmengals',
     role: 'vecmāte', glyph: 'cradle', status: 'alive',
     x: 1330, y: 560,
-    about: 'Ciema vecmāte, četrdesmit astoņus gadus veca un moža, Madei Jetei tuvākais cilvēks. Visi trīs viņas bērni ir miruši, un nu viņa ir viena pati pasaulē. Pieņem dzemdības Mades Jetes melnajā pirtī un tur arī pieskata bērnus.'
+    about: 'Ciema vecmāte, četrdesmit astoņus gadus veca un moža, Madei Jetei tuvākais cilvēks. Visi trīs viņas bērni ir miruši, un nu viņa ir viena pati pasaulē. Pieņem dzemdības Mades Jetes melnajā pirtī un tur arī pieskata bērnus. Kamēr Hanss ir prom, viņa pieskata Otto un Paulu.'
   },
   {
     id: 'grants', name: 'Grants', kind: 'npc', group: 'akmengals',
@@ -148,19 +151,53 @@ STONETOP.people = [
     id: 'zbignevs', name: 'Zbigņevs', kind: 'npc', group: 'akmengals',
     role: 'ciema priesteris', glyph: 'pavilion', status: 'alive',
     x: 1170, y: 410,
-    about: 'Vecs Dievu nojumes sargs, kas cieši turas pie paražām: dievi ir četri, un visam ir sava pareizā, senā kārtība. Ar katru gadu viņš kļūst stingrāks, un ciemam tas nepatīk. Viņš šaubās, vai Danu tiešām Rūnu svaidījusi.'
+    about: 'Vecs Dievu paviljona sargs, ko ļaudis sauc par tēvu Zbigņevu. Viņš cieši turas pie paražām: dievi ir četri, un visam ir sava pareizā, senā kārtība. Ar katru gadu viņš kļūst stingrāks, un ciemam tas nepatīk. Viņš šaubās, vai Danu tiešām Rūnu svaidījusi. Kad šopavasar sāka zust darbarīki, viņš teica, ka Aratisam jānes ziedojums, lai atjaunotu izjaukto kārtību.'
   },
   {
     id: 'manfreds', name: 'Manfrēds', kind: 'npc', group: 'akmengals',
     role: 'krodzinieks', glyph: 'tankard', status: 'alive',
     x: 1080, y: 240,
-    about: 'Akmeņgala krodzinieks — veikls un ar labu ožu uz peļņu. Tagad, kad Meža ļaudis ir prom, viņš pamazām sāk ieminēties par koku ciršanu Lielajā mežā, lai gan derība ar viņiem liedz tur nocirst kaut vienu dzīvu koku.'
+    about: 'Akmeņgala krodzinieks — veikls un ar labu ožu uz peļņu. Tagad, kad Meža ļaudis ir prom, viņš pamazām sāk ieminēties par koku ciršanu Lielajā mežā, lai gan derība ar viņiem liedz tur nocirst kaut vienu dzīvu koku. Šopavasar, nesdams no meža kritalas, viņš sūkstījās, ka ziema būtu bijusi pavisam citāda, ja vien drīkstētu cirst kokus.'
+  },
+  {
+    id: 'gvins', name: 'Gvins', kind: 'npc', group: 'akmengals',
+    role: 'dzīvo pie sētas', glyph: 'axe', status: 'alive',
+    about: 'Cieminieks, kas dzīvo pie sētas. Viņam pazuda cirvis — viens no darbarīkiem, kas šopavasar zūd ciemā.'
+  },
+  {
+    id: 'vinets', name: 'Vinets', kind: 'npc', group: 'akmengals',
+    role: 'sirmgalvis', glyph: 'snowflake', status: 'dead',
+    about: 'Sirmgalvis, ko ciemā sauca par veco Vinetu. Garajā, bargajā ziemā viņš nosala Lielajā mežā, un viņa nāve atgādināja visiem, cik maz vajag, lai aukstums paņemtu cilvēku.'
+  },
+  {
+    id: 'petrovs', name: 'Petrovs', kind: 'npc', group: 'akmengals',
+    role: 'Kirkaļu karotājs', glyph: 'spear', status: 'alive',
+    about: 'Naivs karotājs Beviana vienībā. Viņš ir iemīlējies Madē Jetē, bet viņa to vēl nenojauš. Lielajā mežā, kad koki sāka gāzties, viņš pēdējā brīdī izrāva Madi Jeti no krītošas priedes ceļa, bet pats tika savainots.'
   },
   {
     id: 'zemnieks', name: 'Zemnieks', kind: 'shadow', group: 'akmengals',
     role: 'vārds nezināms', glyph: 'pitchfork', status: 'unknown',
     x: 1030, y: 1010,
     about: 'Kāds Akmeņgala zemnieks, kurš bija pārliecināts, ka Jorats viņu nolādējis, un devās pēc palīdzības pie Mades Jetes.'
+  },
+
+  /* ---------- Lielais mežs ---------- */
+  {
+    id: 'balais-kalns', name: 'Bālais kalns', kind: 'place', group: 'mezs',
+    role: 'kalns ar trim kokiem', glyph: 'palehill',
+    x: 1610, y: 300,
+    about: 'Kalns dziļi Lielajā mežā. Tā tuvumā nav iestaigātu taku — tikai biezoknis un vietas, kur cilvēki reti sper kāju. Kalnā aug trīs koki, kas jau agrā pavasarī nesa pārgatavojušos augļus: sārti oranžus, bumbieriem līdzīgus, ar savādi zvīņainu mizu. Sēklu vietā tajos ir kaut kas līdzīgs sīkiem zobiem, un augļi ož pēc salkana puvuma, sajaukta ar medu. Rūna no bērnības atceras, ka krinvini jātur pa gabalu no kalna, bet kāpēc — vairs nezina.'
+  },
+  {
+    id: 'akmens-gars', name: 'Akmens gars', kind: 'shadow', group: 'mezs',
+    role: 'apsūnojušā akmenī', glyph: 'boulder', status: 'unknown',
+    x: 1370, y: 330,
+    about: 'Sens, nesteidzīgs gars, kas mīt apsūnojušā akmenī Lielajā mežā, otrpus strautam. Cilvēku rūpes tam šķiet gaistošas, un tas neredz iemesla iejaukties. Rūna nolika pie akmens seģeni kā ziedojumu un pārliecināja garu, ka arī īslaicīgām lietām ir nozīme. Tad no akmens dzīlēm atskanēja dunoņa, un apkārtējie koki, izraudami saknes, gāzās virsū krinviniem.'
+  },
+  {
+    id: 'po', name: 'Po', kind: 'npc', group: 'mezs',
+    role: 'Kirkaļu karotājs', glyph: 'footprints', status: 'missing',
+    about: 'Pārgalvīgs karotājs Beviana vienībā. Pēc krinvinu uzbrukuma, kad pie apsūnojušā akmens gāzās koki, viņš neatgriezās pie pārējiem. Tagad Po ir pazudis kaut kur Lielajā mežā.'
   },
 
   /* ---------- Purmale ---------- */
@@ -174,7 +211,7 @@ STONETOP.people = [
     id: 'gars', name: 'Kūdras uzkalna gars', kind: 'shadow', group: 'purmale',
     role: 'Purmales tuvumā', glyph: 'mound', status: 'unknown',
     x: 1530, y: 1050,
-    about: 'Gars, kas mīt kūdras uzkalnā netālu no Purmales. Made Jete ar to sazinās caur Aidenu, un pagājušajā mēnesī viņa to uzsūtīja Joratam. Kāda loma šajā vietā ir Aratim, Likuma sargam?'
+    about: 'Gars, kas mīt kūdras uzkalnā netālu no Purmales. Made Jete ar to sazinās caur Aidenu, un pagājušajā mēnesī viņa to uzsūtīja Joratam. Kāda loma šajā vietā ir Aratisam, Likuma sargam?'
   },
 
   /* ---------- Svešumā ---------- */
@@ -225,6 +262,12 @@ STONETOP.bonds = [
   { a: 'bevians', b: 'jorats', type: 'duty', label: 'lika atstāt dzīvu',
     aIs: 'vienības vadonis', bIs: 'labākais vienības cīnītājs',
     text: 'Kad zemnieks apsūdzēja Joratu lāstā, Bevians pavēlēja viņu atstāt dzīvu.' },
+  { a: 'bevians', b: 'petrovs', type: 'duty', label: 'dien vienībā',
+    aIs: 'vienības vadonis', bIs: 'karotājs viņa vienībā',
+    text: 'Petrovs dien Beviana Kirkaļu vienībā.' },
+  { a: 'bevians', b: 'po', type: 'duty', label: 'dien vienībā',
+    aIs: 'vienības vadonis', bIs: 'karotājs viņa vienībā',
+    text: 'Po dien Beviana vienībā un kopš krinvinu uzbrukuma Lielajā mežā ir pazudis.' },
   { a: 'bevians', b: 'gvendolina', type: 'friend', label: 'vienaudži',
     text: 'Abi ir vienā vecumā, un Bevianam patīk Gvendolīnas ģimene.' },
   { a: 'bevians', b: 'jolanta', type: 'love', label: 'mīļotie',
@@ -248,16 +291,30 @@ STONETOP.bonds = [
   { a: 'made-jete', b: 'jorats', type: 'tension', label: 'uzsūtīja garu',
     aIs: 'uzsūtīja viņam garu', bIs: 'gara mērķis',
     text: 'Pretēji Beviana pavēlei un kaut arī pati nebija līdz galam pārliecināta, Made Jete uzsūtīja Joratam kūdras uzkalna garu. Jorats pazuda.' },
+  { a: 'petrovs', b: 'made-jete', type: 'love', label: 'slepena mīla',
+    aIs: 'slepens pielūdzējs', bIs: 'viņa sirds izredzētā',
+    text: 'Petrovs ir iemīlējies Madē Jetē. Viņa to vēl nenojauš.' },
+  { a: 'petrovs', b: 'made-jete', type: 'duty', label: 'izglāba dzīvību',
+    aIs: 'glābējs', bIs: 'izglābtā',
+    text: 'Kad Lielajā mežā gāzās koki, Petrovs pēdējā brīdī izrāva Madi Jeti no krītošas priedes ceļa, bet pats tika savainots.' },
+  { a: 'made-jete', b: 'gukals', type: 'mystery', label: 'savāda brūce',
+    aIs: 'dziedēja viņa brūci', bIs: 'ar savādu brūci',
+    text: 'Made Jete atceras Gukala brūci: tā bija svaiga, taču audi ap to bija melni un trūdējuši, it kā ievainojums būtu cirsts jau sen. Tā nebija parasta brūce, un šī doma viņai nedod mieru.' },
+  { a: 'made-jete', b: 'balais-kalns', type: 'mystery', label: 'pazīstami augļi',
+    text: 'Bālā kalna augļi Madei Jetei šķita pazīstami no tēva Granta seniem nostāstiem par Hektumeļa Kodeksa kalpiem. Kad Pauls tos atnesa ciemā, tikai viņa sajuta to salkano smaku — puvumu, sajauktu ar medu.' },
 
   /* ---------- Gari un burvība ---------- */
   { a: 'made-jete', b: 'gars', type: 'sorcery', label: 'sazinās caur Aidenu',
-    text: 'Made Jete sazinās ar garu caur Aidenu. Viņu interesē, kāda loma kūdras uzkalnā ir Aratim, Likuma sargam.' },
+    text: 'Made Jete sazinās ar garu caur Aidenu. Viņa grib zināt, kāda loma kūdras uzkalnā ir Aratisam, Likuma sargam.' },
   { a: 'aidens', b: 'gars', type: 'sorcery', label: 'starpnieks',
     aIs: 'starpnieks', bIs: 'Mades Jetes vārdā',
     text: 'Aidens kārto darīšanas ar garu Mades Jetes vārdā.' },
   { a: 'gars', b: 'jorats', type: 'sorcery', label: 'uzsūtīts',
     aIs: 'uzsūtīts viņam', bIs: 'mērķis',
     text: 'Gars tika uzsūtīts Joratam — un Jorats pazuda. Kas ar viņu notika?' },
+  { a: 'runa', b: 'akmens-gars', type: 'sorcery', label: 'ziedojums un lūgums',
+    aIs: 'lūdza tā palīdzību', bIs: 'uzklausīja viņas lūgumu',
+    text: 'Rūna nolika pie akmens seģeni kā ziedojumu un pārliecināja garu, ka arī īslaicīgām lietām ir nozīme. Gars sadrebināja zemi, un koki gāzās virsū krinviniem.' },
 
   /* ---------- Jorata lieta ---------- */
   { a: 'zemnieks', b: 'jorats', type: 'tension', label: 'apsūdzēja lāstā',
@@ -275,7 +332,10 @@ STONETOP.bonds = [
   { a: 'runa', b: 'pauls', type: 'friend', label: 'mazais pielūdzējs', aIs: 'viņa varone', bIs: 'mazais pielūdzējs',
     text: 'Pauls dievina Rūnu un viņas mastifus un nāk viņai līdzi medībās.' },
   { a: 'runa', b: 'manfreds', type: 'tension', label: 'neuzticība',
-    text: 'Rūna neuzticas krodziniekam: viņš pamazām sāk ieminēties par koku ciršanu Lielajā mežā.' },
+    text: 'Rūna neuzticas krodziniekam: viņš pamazām sāk ieminēties par koku ciršanu Lielajā mežā. Kad Manfrēds sūkstījās, ka ziema būtu bijusi pavisam citāda, ja vien drīkstētu cirst kokus, Rūna viņam atgādināja par derību: mežam ir sava kārtība.' },
+  { a: 'runa', b: 'balais-kalns', type: 'place', label: 'bērnības atmiņa',
+    aIs: 'atceras ceļu turp', bIs: 'bērnības atmiņa',
+    text: 'Rūna no bērnības atceras aptuveno ceļu uz kalnu — un to, ka krinvini jātur pa gabalu no tā. Kāpēc, viņa vairs neatceras.' },
 
   /* ---------- Gvendolīnas saime ---------- */
   { a: 'gvendolina', b: 'hanss', type: 'kin', label: 'laulātie', aIs: 'sieva', bIs: 'vīrs' },
@@ -284,6 +344,21 @@ STONETOP.bonds = [
   { a: 'hanss', b: 'otto', type: 'kin', label: 'tēvs un dēls', aIs: 'tēvs', bIs: 'dēls' },
   { a: 'hanss', b: 'pauls', type: 'kin', label: 'tēvs un dēls', aIs: 'tēvs', bIs: 'dēls' },
   { a: 'otto', b: 'pauls', type: 'kin', label: 'brāļi', aIs: 'brālis', bIs: 'brālis' },
+  { a: 'adarina', b: 'otto', type: 'duty', label: 'pieskata zēnu',
+    aIs: 'pieskata viņu', bIs: 'viņas gādībā',
+    text: 'Kamēr Hanss ar vienību meklē Gvendolīnu, Adarīna pieskata Otto un Paulu.' },
+  { a: 'adarina', b: 'pauls', type: 'duty', label: 'pieskata zēnu',
+    aIs: 'pieskata viņu', bIs: 'viņas gādībā',
+    text: 'Kamēr Hanss ar vienību meklē Gvendolīnu, Adarīna pieskata Paulu un Otto.' },
+  { a: 'gvendolina', b: 'balais-kalns', type: 'place', label: 'lasīja tur augļus',
+    aIs: 'lasīja tur augļus', bIs: 'tur viņa lasīja augļus',
+    text: 'Gvendolīna ar Paulu devās uz Bālo kalnu un salasīja augļus no trim kokiem, kas tur aug. Tad krinvini paņēma Gvendolīnu, bet Pauls aizbēga.' },
+  { a: 'pauls', b: 'balais-kalns', type: 'place', label: 'lasīja tur augļus',
+    aIs: 'lasīja tur augļus', bIs: 'tur viņš lasīja augļus',
+    text: 'Pauls ar māti salasīja augļus Bālajā kalnā un atnesa tos mājās tarbā.' },
+  { a: 'bevians', b: 'balais-kalns', type: 'place', label: 'ved turp vienību',
+    aIs: 'ved turp vienību', bIs: 'ceļa mērķis',
+    text: 'Bevians ved Kirkaļu vienību uz Bālo kalnu glābt Gvendolīnu. Vienībā iet arī Hanss, un līdzi dodas Rūna ar suņiem un Made Jete.' },
 
   /* ---------- Amatnieki ---------- */
   { a: 'jolanta', b: 'arvadoss', type: 'duty', label: 'cer kļūt par mācekli',

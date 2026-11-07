@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Akmeņgals</title>
-  <meta name="description" content="Akmeņgala ļaudis un hronika — Stonetop kampaņa.">
+  <meta name="description" content="Akmeņgala ļaudis, hronika un dienasgrāmatas — Stonetop kampaņa.">
   <meta property="og:title" content="Akmeņgals">
-  <meta property="og:description" content="Akmeņgala ļaudis un hronika — Stonetop kampaņa.">
+  <meta property="og:description" content="Akmeņgala ļaudis, hronika un dienasgrāmatas — Stonetop kampaņa.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#f3e1b6">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -91,6 +91,23 @@
         <span class="choice-text">Notikumi no senām dienām līdz šodienai, iegriezti kā robi koka nūjā</span>
         <span class="choice-go" aria-hidden="true">Lasīt hroniku →</span>
       </a>
+
+      <a class="choice" href="dienasgramatas.html">
+        <svg class="choice-art" viewBox="0 0 240 130" aria-hidden="true">
+          <g class="art-book">
+            <path class="pages" d="M114 38 Q84 22 40 30 L40 112 Q84 104 114 118 Q144 104 188 112 L188 30 Q144 22 114 38 Z"/>
+            <path class="under" d="M40 112 L40 117 Q84 109 114 123 Q144 109 188 117 L188 112"/>
+            <path class="spine" d="M114 38 L114 118"/>
+            <path class="lines" d="M52 46 Q80 41 104 48 M52 58 Q80 53 104 60 M52 70 Q80 65 104 72 M52 82 Q80 77 104 84 M52 94 Q74 90 94 95 M124 48 Q148 41 176 46 M124 60 Q148 53 176 58 M124 72 Q148 65 162 68"/>
+            <path class="quill" d="M163 92 Q186 52 226 10 Q222 46 175 88 Z"/>
+            <path class="quill-vein" d="M150 108 L218 22 M184 66 l12 -4 M192 56 l12 -5 M176 76 l11 -2"/>
+          </g>
+          <g id="art-diary"></g>
+        </svg>
+        <span class="choice-title">Dienasgrāmatas</span>
+        <span class="choice-text">Piedzīvotais tēlu pašu vārdiem — pa lappusei pēc katras sesijas</span>
+        <span class="choice-go" aria-hidden="true">Lasīt dienasgrāmatas →</span>
+      </a>
     </nav>
   </main>
 
@@ -108,6 +125,8 @@
       document.getElementById('art-pcs').innerHTML = pcs.map(function (p) {
         return '<circle cx="' + p[1] + '" cy="' + p[2] + '" r="17"/>' + g(p[0], p[1], p[2], 22);
       }).join('');
+      document.getElementById('art-diary').innerHTML =
+        '<circle cx="76" cy="100" r="13"/>' + g('whisk', 76, 100, 17);
       var ev = [['moon', 30, 32], ['wolf', 77, 30], ['claws', 120, 28], ['sapling', 163, 30], ['sun', 210, 32]];
       document.getElementById('art-events').innerHTML = ev.map(function (e) {
         return '<path class="tie" d="M' + e[1] + ' ' + (e[2] + 17) + ' V' + (e[2] + 37) + '"/>' + g(e[0], e[1], e[2], 30);

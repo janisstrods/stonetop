@@ -23,6 +23,7 @@
   --c-tension: #7c2c16;
   --c-mystery: #40507e;
   --c-sorcery: #6d4a7c;
+  --c-place: #7a5a2c;
 
   --font-display: 'Grenze', 'Libre Caslon Text', Georgia, serif;
   --font-body: 'Libre Caslon Text', 'Iowan Old Style', Georgia, serif;
@@ -183,7 +184,10 @@ a { color: inherit; }
   :root { --header-h: 52px; }
   .topbar { gap: 10px; padding: 0 12px; }
   .home-link span, .topbar .divider { display: none; }
-  .topbar h1 { font-size: 21px; }
+  /* three pages in the menu leave no room for the title: the highlighted menu item names the page,
+     and the heading stays for screen readers */
+  .topbar h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .topbar nav { margin-left: auto; }
   .topbar nav a { font-size: 15px; padding: 5px 8px; }
 }
 

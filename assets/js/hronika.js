@@ -42,8 +42,23 @@
     var p = byId[id];
     if (!p) return '';
     return '<li><a class="chip kind-' + p.kind + '" href="karte.html#' + encodeURIComponent(p.id) + '">' +
-      '<svg viewBox="-36 -36 72 72" aria-hidden="true"><circle class="disc" r="31"/>' + S.glyphMarkup(p.glyph, 0, 0, 40) + '</svg>' +
+      '<svg viewBox="-36 -36 72 72" aria-hidden="true">' +
+        (p.kind === 'place' ? '<path class="disc" d="M0 -33 L33 0 L0 33 L-33 0 Z"/>' : '<circle class="disc" r="31"/>') +
+        S.glyphMarkup(p.glyph, 0, 0, 40) + '</svg>' +
       '<span>' + esc(p.name) + '</span></a></li>';
+  }
+
+  // diary entries per session, for the markers between sessions
+  var diariesBySession = {};
+  (S.diaries || []).forEach(function (d) { (diariesBySession[d.session] = diariesBySession[d.session] || []).push(d); });
+  function diaryMark(n) {
+    var list = diariesBySession[n];
+    if (!list) return '';
+    return '<li class="diary-mark"><span><svg viewBox="0 0 64 64" aria-hidden="true">' + S.glyphMarkup('book', 32, 32, 64) + '</svg>' +
+      n + '. sesija dienasgrāmatās: ' + list.map(function (d) {
+        var w = byId[d.author];
+        return '<a href="dienasgramatas.html#' + encodeURIComponent(d.id) + '">' + esc(w ? w.name : d.author) + '</a>';
+      }).join(', ') + '</span></li>';
   }
 
   var html = [];
@@ -67,6 +82,7 @@
       (era.note ? '<p>' + esc(era.note) + '</p>' : '') + '</header><ol class="events">');
 
     list.forEach(function (ev, i) {
+      if (typeof ev.session === 'number' && (i === 0 || list[i - 1].session !== ev.session)) html.push(diaryMark(ev.session));
       if (i > 0) {
         var g = gapText(list[i - 1], ev);
         if (g) html.push('<li class="gap" aria-hidden="true"><span>' + esc(g) + '</span></li>');

@@ -1,18 +1,19 @@
 # Akmeņgals: Stonetop campaign site
 
-A small static site for the players. It has three pages:
+A small static site for the players. It has four pages:
 
 | Page | File | What it is |
 | --- | --- | --- |
-| Landing | `index.html` | The village's standing stone and two choices |
-| Relationship map | `karte.html` | *Akmeņgala ļaudis*: PCs, NPCs and how they're tied together |
+| Landing | `index.html` | The village's standing stone and three choices |
+| Relationship map | `karte.html` | *Akmeņgala ļaudis*: PCs, NPCs, places, and how they're tied together |
 | Timeline | `hronika.html` | *Akmeņgala hronika*: events from long ago up to now |
+| Diaries | `dienasgramatas.html` | *Dienasgrāmatas*: the players' own write-ups of each session, one page per entry (`dienasgramatas.html#s1-made-jete`) |
 
 There's no build step and there are no dependencies. Fonts come from Google Fonts, and everything else is in this folder. You can open `index.html` straight from disk, and it also works on GitHub Pages as is.
 
 ## Updating the content
 
-All the content is Latvian and lives in two files (plus the version line, below). The English notes in the vault are the source of truth. The Latvian wording follows [GLOSSARY.md](GLOSSARY.md), which holds the agreed name spellings, declensions, terms and style rules. You don't need to touch the HTML, CSS or JS to add people or events.
+All the content is Latvian and lives in three files (plus the version line, below). The English notes in the vault are the source of truth. The Latvian wording follows [GLOSSARY.md](GLOSSARY.md), which holds the agreed name spellings, declensions, terms and style rules. You don't need to touch the HTML, CSS or JS to add people or events.
 
 ### `data/cilveki.js`: people and relationships
 
@@ -23,7 +24,8 @@ All the content is Latvian and lives in two files (plus the version line, below)
   id: 'arnis',                 // unique, lowercase, no diacritics; used in links (karte.html#arnis)
   name: 'Arnis',               // shown on the map
   kind: 'npc',                 // 'pc' | 'npc' | 'shadow' (an unnamed or unknown figure, drawn faintly)
-  group: 'akmengals',          // map region: 'akmengals' | 'purmale' | 'talume'
+                               // | 'place' (a place, drawn as a diamond map marker; needs no status)
+  group: 'akmengals',          // map region: 'akmengals' | 'mezs' (the Great Wood) | 'purmale' | 'talume'
   role: 'kalējs',              // short occupation, shown under the name
   glyph: 'sword',              // emblem from assets/js/glyphs.js (list below)
   status: 'alive',             // 'alive' | 'dead' | 'missing' | 'away' | 'unknown'
@@ -55,6 +57,7 @@ Relationship types, with how each is drawn:
 | `tension` | Nesaskaņas | jagged rust |
 | `mystery` | Noslēpums | dotted blue |
 | `sorcery` | Burvība un gari | wavy violet |
+| `place` | Ceļi un vietas | brown trail, dash and dot (someone's tie to a place) |
 
 If two people share more than one bond, the lines bow apart automatically.
 
@@ -75,6 +78,18 @@ Add events to `STONETOP.events` in chronological order (oldest first):
 
 `era: 'pirms'` is before the campaign, and `era: 'kampana'` is anything that happens in play. A person's map card automatically lists every event they appear in.
 
+### `data/dienasgramatas.js`: diaries
+
+**Don't edit this file by hand.** It's generated from the vault's `Diaries/*.md` notes, one note per player per session:
+
+```bash
+node ../.claude/skills/update-stonetop-site/scripts/diaries.js ..
+```
+
+Each entry has an `id` (`s1-made-jete`), the `session` number, its `date`, the `author` (a PC's id) and `text`, a list of paragraphs. In the paragraphs, `[[gvendolina|Gvendolīnas]]` is a link to that person or place on the map; in the vault note it's an ordinary wikilink, `[[Gvendolīna|Gvendolīnas]]`. The players' real names never reach the site: entries are signed with the character.
+
+The diaries also show up elsewhere: a person's card on the map lists the entries they wrote or appear in, and the chronicle marks where each session's events begin, with links to that session's entries.
+
 ### `data/versija.js`: version line
 
 The landing page's footer shows the site's version and the date of the last update, e.g. *Versija 1.4 · atjaunināta 2026. gada 14. oktobrī*. Change both fields every time you publish:
@@ -88,7 +103,7 @@ STONETOP.version = {
 
 ### Glyphs
 
-`shield`, `whisk`, `sapling`, `crutch`, `spear`, `hide`, `footprints`, `banner`, `sickle`, `bow`, `top`, `paw`, `cradle`, `pot`, `wolf`, `sheaf`, `sword`, `tankard`, `pavilion`, `horn`, `pitchfork`, `moon`, `mound`, `claws`, `tree`, `sun`.
+`shield`, `whisk`, `sapling`, `crutch`, `spear`, `hide`, `footprints`, `banner`, `sickle`, `bow`, `top`, `paw`, `cradle`, `pot`, `wolf`, `sheaf`, `sword`, `tankard`, `pavilion`, `horn`, `pitchfork`, `moon`, `mound`, `axe`, `snowflake`, `palehill`, `boulder`, `fruit`, `book`, `claws`, `tree`, `sun`.
 
 You can draw new ones in `assets/js/glyphs.js` on a 64 × 64 grid. Plain paths are ink strokes. `class="f"` makes a solid ink fill, and `class="p"` makes a paper-coloured fill that hides whatever is behind it.
 

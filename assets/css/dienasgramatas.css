@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Diaries — the players' own pages
+   ========================================================================== */
+
+.diaries {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: clamp(28px, 6vh, 56px) 16px 72px;
+  outline: none;
+}
+
+/* ---- heading ------------------------------------------------------------ */
+.diaries-head { text-align: center; }
+.head-book { display: block; width: 74px; height: 74px; margin: 0 auto 6px; color: var(--ink); overflow: visible; }
+.diaries-head .eyebrow {
+  margin: 0;
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  color: var(--ink-soft);
+}
+.diaries-head h2 {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1;
+  color: var(--ink-strong);
+  text-shadow: 0 1px 0 rgba(255, 248, 228, 0.7);
+}
+.diaries-head .ornament-rule { width: min(360px, 80%); margin: 16px auto 0; }
+.lede {
+  max-width: 46ch;
+  margin: 16px auto 0;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  text-wrap: balance;
+}
+
+/* ---- the shelf ----------------------------------------------------------- */
+.shelf { margin-top: 44px; }
+.shelf-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.shelf-head span {
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 23px;
+  letter-spacing: 0.14em;
+  color: var(--ink-strong);
+}
+.shelf-head time { font-style: italic; font-size: 15.5px; color: var(--ink-soft); font-weight: 400; }
+
+.entry-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.entry-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 18px 22px 16px 18px;
+  text-decoration: none;
+  color: var(--ink);
+  background: linear-gradient(180deg, rgba(251, 243, 222, 0.9), rgba(246, 231, 196, 0.8));
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.entry-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--ink-faint);
+  pointer-events: none;
+}
+.entry-card:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, rgba(253, 247, 231, 0.96), rgba(248, 235, 204, 0.9));
+  box-shadow: 0 1px 0 rgba(255, 248, 228, 0.6) inset, 0 16px 32px -14px rgba(60, 40, 10, 0.55);
+}
+.card-medal { width: 76px; height: 76px; }
+.card-text { display: flex; flex-direction: column; min-width: 0; }
+.card-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 1.05;
+  color: var(--ink-strong);
+}
+.card-playbook {
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+.card-excerpt { margin-top: 8px; font-size: 15.5px; line-height: 1.6; }
+.card-go {
+  align-self: flex-start;
+  margin-top: 10px;
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--rule);
+}
+.entry-card:hover .card-go { color: var(--c-love); border-color: currentColor; }
+
+.empty { margin-top: 40px; text-align: center; font-style: italic; color: var(--ink-soft); }
+
+.diaries-end { margin-top: 48px; text-align: center; }
+.diaries-end p {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-style: italic;
+  font-size: 24px;
+  color: var(--ink-soft);
+}
+
+/* ---- medallions (shared look with the map) ------------------------------ */
+.card-medal, .entry-medal, .chip-medal { display: block; overflow: visible; color: var(--ink); flex: none; }
+.diaries .disc { fill: #f8ecd0; stroke: var(--ink); stroke-width: 2.6; stroke-linejoin: round; }
+.diaries .ring { fill: none; stroke: var(--ink); stroke-width: 0.9; opacity: 0.65; }
+.diaries .rim { fill: none; stroke: var(--ink); stroke-width: 6; stroke-dasharray: 1.3 3.6; }
+.diaries .kind-pc .disc { stroke-width: 3.2; }
+.diaries .kind-shadow .disc { stroke-dasharray: 5 4; }
+
+/* ---- one entry ----------------------------------------------------------- */
+.back {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+.back:hover { color: var(--c-love); }
+
+.entry {
+  position: relative;
+  padding: clamp(26px, 5vw, 52px) clamp(20px, 6vw, 64px) clamp(26px, 4vw, 40px);
+  background: linear-gradient(180deg, rgba(252, 246, 229, 0.94), rgba(247, 234, 203, 0.88));
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+}
+.entry::before {
+  /* inner ruled frame */
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 1px solid var(--ink-faint);
+  pointer-events: none;
+}
+.entry::after {
+  /* notched corners, as on the landing page's cards */
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--ink), var(--ink)) top left / 16px 3px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) top left / 3px 16px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) top right / 16px 3px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) top right / 3px 16px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) bottom left / 16px 3px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) bottom left / 3px 16px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) bottom right / 16px 3px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) bottom right / 3px 16px no-repeat;
+}
+
+.entry-head { text-align: center; }
+.entry-when {
+  margin: 0;
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+.entry-when time { letter-spacing: 0.06em; }
+.byline {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  text-decoration: none;
+  color: var(--ink);
+  text-align: left;
+}
+.byline > span { display: flex; flex-direction: column; }
+.entry-medal { width: 70px; height: 70px; }
+.byline-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 5.5vw, 44px);
+  line-height: 1;
+  color: var(--ink-strong);
+}
+.byline-playbook {
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+}
+.byline:hover .byline-name { color: var(--c-love); }
+.entry-head .ornament-rule { width: min(320px, 76%); margin: 18px auto 0; }
+
+.entry-body {
+  /* the page is ruled like a notebook: one rule under every line of text */
+  --line: 32px;
+  margin-top: 24px;
+  background-image: repeating-linear-gradient(180deg,
+    transparent 0 calc(var(--line) - 7px),
+    rgba(119, 106, 71, 0.14) calc(var(--line) - 7px) calc(var(--line) - 6px),
+    transparent calc(var(--line) - 6px) var(--line));
+}
+.entry-body p {
+  margin: 0 0 var(--line);
+  font-size: 17.5px;
+  line-height: var(--line);
+  text-wrap: pretty;
+  hyphens: auto;
+}
+.entry-body p:first-child::first-letter {
+  float: left;
+  margin: 0.06em 0.1em 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.6em;
+  line-height: 0.82;
+  color: var(--ink-strong);
+}
+
+.mention {
+  text-decoration: none;
+  color: var(--ink-strong);
+  background-image: linear-gradient(to right, currentColor 50%, transparent 50%);
+  background-size: 4px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 92%;
+  transition: color 0.15s ease;
+}
+.mention:hover { color: var(--c-love); background-image: linear-gradient(currentColor, currentColor); background-size: 100% 1px; }
+.mention.kind-pc { font-weight: 700; }
+.mention.kind-place { font-style: italic; }
+
+.entry-foot {
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+.entry-foot h3 {
+  margin: 0;
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+}
+.to-chronicle { margin: 16px 0 0; }
+.to-chronicle a {
+  font-family: var(--font-caps);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.to-chronicle a:hover { color: var(--c-love); border-color: currentColor; }
+
+/* chips: the people and places in this entry, as in the chronicle */
+.chips {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 11px 2px 3px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15.5px;
+  line-height: 1.4;
+  text-decoration: none;
+  color: var(--ink-strong);
+  background: rgba(255, 250, 235, 0.7);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.chip-medal { width: 25px; height: 25px; }
+.chip .disc { stroke-width: 3.4; }
+.chip .ring, .chip .rim { display: none; }
+.chip.kind-shadow span { font-family: var(--font-body); font-style: italic; font-weight: 400; font-size: 14.5px; }
+.chip.kind-place span { font-family: var(--font-hand); font-style: italic; font-weight: 400; font-size: 17px; }
+.chip:hover { border-color: var(--ink); color: var(--c-love); background: #fff8e8; }
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 22px;
+}
+.pager a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  max-width: 48%;
+}
+.pager-next { text-align: right; margin-left: auto; }
+.pager-dir { font-family: var(--font-caps); font-weight: 700; font-size: 16px; letter-spacing: 0.06em; }
+.pager-what { font-style: italic; font-size: 15px; color: var(--ink-soft); }
+.pager a:hover .pager-dir { color: var(--c-love); }
+
+@media (max-width: 640px) {
+  .entry-card { grid-template-columns: 56px minmax(0, 1fr); gap: 12px; padding: 16px 16px 14px 14px; }
+  .card-medal { width: 56px; height: 56px; }
+  .card-name { font-size: 24px; }
+  .entry-medal { width: 58px; height: 58px; }
+  .entry-body { --line: 29px; }
+  .entry-body p { font-size: 16.5px; }
+  .shelf-head { flex-wrap: wrap; gap: 2px 12px; }
+}
+
+@media print {
+  .topbar, .back, .pager, .to-chronicle { display: none; }
+  .entry { box-shadow: none; }
+}

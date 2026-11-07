@@ -195,6 +195,57 @@ STONETOP.glyphs = {
     <path d="M21 33 Q18 29 21 25 Q24 21 21 17 M43 33 Q46 29 43 25 Q40 21 43 17" stroke-width="1.5"/>
     <path d="M3 55 L17 55 M23 58 L41 58 M47 55 L61 55" stroke-width="1.4"/>`,
 
+  // Session 1 ----------------------------------------------------------------
+  // Gvins — a woodcutter's axe (his was stolen)
+  axe: `
+    <path d="M14 60 L41 7" stroke-width="3.6"/>
+    <path class="f" d="M34.5 9.8 L39.5 12.2 Q47 18 57.8 14.6 Q61.5 26 48.4 33.4 Q44 25 35.5 20.5 L30.5 17.8 Z"/>
+    <path d="M15.5 53 l4.5 2.3 M18.5 47 l4.5 2.3" stroke-width="1.4"/>`,
+
+  // Vinets — a snowflake: the hard winter that took him
+  snowflake: `
+    <path d="M32 32 L32.0 6.0 M32 32 L9.5 19.0 M32 32 L9.5 45.0 M32 32 L32.0 58.0 M32 32 L54.5 45.0 M32 32 L54.5 19.0" stroke-width="2.8"/>
+    <path d="M26.0 15.0 L32.0 9.0 L38.0 15.0 M27.5 23.0 L32.0 17.0 L36.5 23.0 M14.3 28.7 L12.1 20.5 L20.3 18.3 M22.0 31.4 L19.0 24.5 L26.5 23.6 M20.3 45.7 L12.1 43.5 L14.3 35.3 M26.5 40.4 L19.0 39.5 L22.0 32.6 M38.0 49.0 L32.0 55.0 L26.0 49.0 M36.5 41.0 L32.0 47.0 L27.5 41.0 M49.7 35.3 L51.9 43.5 L43.7 45.7 M42.0 32.6 L45.0 39.5 L37.5 40.4 M43.7 18.3 L51.9 20.5 L49.7 28.7 M37.5 23.6 L45.0 24.5 L42.0 31.4" stroke-width="2"/>
+    <circle class="f" cx="32" cy="32" r="3.2"/>`,
+
+  // Bālais kalns — a pale hill with its three fruit trees, one larger than the others
+  palehill: `
+    <path class="p" d="M3 57 Q16 38 32 36 Q48 38 61 57 Z"/>
+    <path d="M3 57 Q16 38 32 36 Q48 38 61 57" stroke-width="2.6"/>
+    <path d="M1 58.5 L63 58.5" stroke-width="1.6"/>
+    <path d="M12 52 l3 -3 M18 47 l3 -3 M46 47 l-3 -3 M52 52 l-3 -3" stroke-width="1.2"/>
+    <path d="M32 37 L32 21 M20 43 L20 32 M44 43 L44 32" stroke-width="2.2"/>
+    <circle class="p" cx="32" cy="15" r="10"/><circle cx="32" cy="15" r="10" stroke-width="2.2"/>
+    <circle class="p" cx="20" cy="28" r="6"/><circle cx="20" cy="28" r="6" stroke-width="2"/>
+    <circle class="p" cx="44" cy="28" r="6"/><circle cx="44" cy="28" r="6" stroke-width="2"/>
+    <g class="f"><circle cx="28" cy="12" r="1.9"/><circle cx="36" cy="16" r="1.9"/><circle cx="31" cy="20" r="1.6"/><circle cx="19" cy="27" r="1.5"/><circle cx="45" cy="29" r="1.5"/></g>`,
+
+  // The spirit of the mossy stone — a boulder with moss on its back and a spiral of life in it
+  boulder: `
+    <path class="p" d="M8 54 Q5 38 17 29 Q29 20 44 23 Q59 28 57 54 Z"/>
+    <path d="M8 54 Q5 38 17 29 Q29 20 44 23 Q59 28 57 54" stroke-width="2.6"/>
+    <path d="M3 55.5 L61 55.5" stroke-width="1.6"/>
+    <path d="M14 31 q1.5 -5 4 -1 q1 -5 4 -1 M23 25 q1.5 -5 4 -1 q1.5 -5 4 -1 q1.5 -5 4 0 M38 23 q2 -4 4 0 q2 -4 4.5 1 M47 26 q2 -3 4 1.5" stroke-width="1.6"/>
+    <path d="M32 42 q0 -3 3 -3 q4 0 4 4 q0 5 -6 5 q-7 0 -7 -7 q0 -8 9 -8" stroke-width="1.7"/>
+    <path d="M14 48 l3 -2 M48 47 l3 2" stroke-width="1.2"/>`,
+
+  // The fruit of the pale hill — scaly, pear-like, with teeth where the seeds should be
+  fruit: `
+    <path d="M32 11 L34 4" stroke-width="2.2"/>
+    <path class="f" d="M34 6 Q41 1 47 5 Q40 10 34 6 Z"/>
+    <path class="p" d="M32 11 Q26 11 25 21 Q24 29 18 37 Q12 47 18 55 Q24 61 32 61 Q40 61 46 55 Q52 47 46 37 Q40 29 39 21 Q38 11 32 11 Z"/>
+    <path d="M32 11 Q26 11 25 21 Q24 29 18 37 Q12 47 18 55 Q24 61 32 61 Q40 61 46 55 Q52 47 46 37 Q40 29 39 21 Q38 11 32 11 Z" stroke-width="2.6"/>
+    <path d="M28 22 q2 2 4 0 q2 2 4 0 M24 31 q2.5 2.5 5 0 q2.5 2.5 5 0 q2.5 2.5 5 0 M20 51 q2.5 2.5 5 0 M39 51 q2.5 2.5 5 0" stroke-width="1.3"/>
+    <path class="f" d="M21 42 Q32 37 43 42 Q32 47 21 42 Z"/>
+    <path class="p" d="M24 42 l2 -2.4 l2 2.4 l2 -2.8 l2 2.8 l2 -2.8 l2 2.8 l2 -2.4 l2 2.4 Z"/>`,
+
+  // Diaries — an open book with ruled pages
+  book: `
+    <path class="p" d="M32 17 Q20 10 5 14 L5 53 Q20 49 32 55 Q44 49 59 53 L59 14 Q44 10 32 17 Z"/>
+    <path d="M32 17 Q20 10 5 14 L5 53 Q20 49 32 55 Q44 49 59 53 L59 14 Q44 10 32 17 Z" stroke-width="2.6"/>
+    <path d="M32 17 L32 55" stroke-width="2"/>
+    <path d="M11 22 Q19 20 27 23 M11 29 Q19 27 27 30 M11 36 Q19 34 27 37 M11 43 Q17 41.5 23 43.5 M37 23 Q45 20 53 22 M37 30 Q45 27 53 29 M37 37 Q45 34 53 36" stroke-width="1.3"/>`,
+
   // Event glyphs ----------------------------------------------------------
   // Crinwin attack — raking claw marks
   claws: `

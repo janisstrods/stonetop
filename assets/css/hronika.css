@@ -197,6 +197,8 @@
 .chip.kind-pc .disc { stroke-width: 4.5; }
 .chip.kind-shadow .disc { stroke-dasharray: 5 4; }
 .chip.kind-shadow span { font-family: var(--font-body); font-style: italic; font-weight: 400; font-size: 14.5px; }
+.chip.kind-place .disc { stroke-linejoin: round; }
+.chip.kind-place span { font-family: var(--font-hand); font-style: italic; font-weight: 400; font-size: 17px; }
 .chip:hover { border-color: var(--ink); color: var(--c-love); background: #fff8e8; }
 
 /* arriving from the map */
@@ -286,4 +288,41 @@
   .chronicle-end { text-align: left; padding-left: 0; }
   .end-sun { margin-left: 6px; }
   .chronicle-end p { margin-left: 4px; }
+}
+
+/* ---- a session's diaries, marked on the staff ---------------------------- */
+.diary-mark {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin: 14px 0 10px;
+}
+.diary-mark span {
+  display: inline-block;
+  max-width: 100%;
+  padding: 3px 14px 4px 8px;
+  line-height: 1.5;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-soft);
+  background: var(--paper-light);
+  border: 1px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 2px 2px 0 var(--ink-faint);
+}
+.diary-mark svg { width: 24px; height: 24px; margin-right: 6px; vertical-align: -6px; color: var(--ink); }
+.diary-mark a {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 700;
+  color: var(--ink-strong);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.diary-mark a:hover { color: var(--c-love); border-color: currentColor; }
+@media (max-width: 760px) {
+  .diary-mark { justify-content: flex-start; padding-left: 70px; }
+  .diary-mark span { border-radius: 10px; }
 }

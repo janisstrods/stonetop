@@ -72,6 +72,12 @@ STONETOP.events = [
     glyph: 'sapling', people: ['runa', 'zbignevs', 'bevians']
   },
   {
+    id: 'barga-ziema', era: 'pirms', when: 'Pagājušajā ziemā', yearsAgo: 0.2,
+    title: 'Bargā ziema',
+    text: 'Ziema ir gara un barga. Malka jātaupa, un daudzās mājās aukstums kļūst par pastāvīgu iemītnieku. Vecais Vinets Lielajā mežā nosalst līdz nāvei.',
+    glyph: 'snowflake', people: ['vinets']
+  },
+  {
     id: 'krinvinu-uzbrukums', era: 'pirms', when: 'Pirms laba mēneša', yearsAgo: 0.09,
     title: 'Krinvinu uzbrukums',
     text: 'Seši krinvini naktī uzbrūk Gukala sardzei vairākdienu apgaitā Lielajā mežā. Uzbrukums skan kā vētra: brakšķ zari, plosās lapotne. Divi no tiem aizbēg. Gukalu ievaino kājā; vēlāk viņš kāju zaudē un ir spiests atkāpties.',
@@ -94,5 +100,47 @@ STONETOP.events = [
     title: 'Pavasaris uzplaukst',
     text: 'Ziema atkāpjas, un pavasaris nes interesantas ziņas — un draudus. Te sākas mūsu stāsts.',
     glyph: 'sun', people: ['bevians', 'made-jete', 'runa']
+  },
+  {
+    id: 'pec-ziemas', era: 'kampana', when: 'Agrā pavasarī', yearsAgo: null, session: 1,
+    title: 'Pēc ziemas',
+    text: 'Rūna un Gvendolīna pārrunā mednieču pavasara darbus, un Gvendolīna apsola salasīt Rūnai pumpurus. Garām iet Manfrēds ar kritalām un sūkstās: ja vien drīkstētu cirst kokus, ziema būtu bijusi pavisam citāda. Rūna viņam atgādina par derību.',
+    glyph: 'tree', people: ['runa', 'gvendolina', 'manfreds']
+  },
+  {
+    id: 'zud-darbariki', era: 'kampana', when: 'Agrā pavasarī', yearsAgo: null, session: 1,
+    title: 'Zūd darbarīki',
+    text: 'Ciemā zog darbarīkus: Gvinam, kurš dzīvo pie sētas, pazūd cirvis. Tēvs Zbigņevs saka, ka Aratisam jānes ziedojums, lai atjaunotu izjaukto kārtību.',
+    glyph: 'axe', people: ['gvins', 'zbignevs']
+  },
+  {
+    id: 'krinvini-panem-gvendolinu', era: 'kampana', when: 'Agrā pavasarī', yearsAgo: null, session: 1,
+    title: 'Krinvini paņem Gvendolīnu',
+    text: 'Pauls atskrien mājās nobrāzies, saplēstās drēbēs, bez siltās jakas: krinvini paņēmuši viņa māti. Abi ir salasījuši augļus no trim kokiem Bālajā kalnā — sārti oranžus, ar zvīņainu mizu un sīkiem zobiem sēklu vietā. Tikai Made Jete sajūt, ka augļi ož pēc salkana puvuma un medus.',
+    glyph: 'fruit', people: ['pauls', 'gvendolina', 'made-jete', 'balais-kalns']
+  },
+  {
+    id: 'cela-uz-kalnu', era: 'kampana', when: 'Agrā pavasarī', yearsAgo: null, session: 1,
+    title: 'Ceļā uz Bālo kalnu',
+    text: 'Hanss pieprasa, lai Bevians rīkojas. Bevians raizējas, kas sargās ciemu, kad vienība būs prom, taču Gvendolīna jāglābj tūlīt. Kirkaļu vienība, Hanss tās vidū, dodas Gvendolīnai pakaļ, un līdzi iet Rūna ar suņiem un Made Jete. Adarīna paliek pieskatīt Otto un Paulu, un Jolanta māj ardievas. Ceļinieki šķērso strautu atmuguriski, kā to darījuši senči.',
+    glyph: 'footprints', people: ['hanss', 'bevians', 'runa', 'made-jete', 'adarina', 'otto', 'pauls', 'jolanta', 'balais-kalns']
+  },
+  {
+    id: 'krinvini-kokos', era: 'kampana', when: 'Agrā pavasarī', yearsAgo: null, session: 1,
+    title: 'Krinvini kokos',
+    text: 'Aiz strauta mežs apklust, un koku galotnēs parādās krinvini. Tie atdarina ceļinieku balsis un nenolaiž acu no cirvjiem. Beviana vārdi atgriež vīriem drosmi. Viens krinvins ir neparasti bāls, gandrīz albīns; Made Jete aizmet tam augli, un tas to aizgūtnēm aprij. Suņi bālo krinvinu saplosa, taču pārējie neatkāpjas.',
+    glyph: 'claws', people: ['bevians', 'runa', 'made-jete']
+  },
+  {
+    id: 'akmens-gars', era: 'kampana', when: 'Agrā pavasarī', yearsAgo: null, session: 1,
+    title: 'Akmens gars',
+    text: 'Rūna noliek pie apsūnojuša akmens seģeni un pierunā tajā mītošo seno garu palīdzēt. Zeme nodreb, koki gāžas, un krinvini pašķīst. Petrovs izrauj Madi Jeti no krītošas priedes ceļa un pats tiek savainots. Bevians dzenas krinviniem pakaļ un apmaldās.',
+    glyph: 'boulder', people: ['runa', 'akmens-gars', 'petrovs', 'made-jete', 'bevians']
+  },
+  {
+    id: 'nakts-meza', era: 'kampana', when: 'Agrā pavasarī, krēslā', yearsAgo: null, session: 1,
+    title: 'Nakts mežā',
+    text: 'Pie akmens Rūna un Made Jete pamana, ka bālais krinvins, ko suņi saplosīja, ir salipis kopā un aizlien pa taku. Bevians atrod ceļu līdz akmenim, taču Po ir pazudis. Līdz ar tumsu atgriežas aukstums.',
+    glyph: 'moon', people: ['bevians', 'po', 'runa', 'made-jete']
   }
 ];

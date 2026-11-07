@@ -73,9 +73,9 @@
 .choices {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(16px, 3vw, 34px);
-  max-width: 900px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2.6vw, 30px);
+  max-width: 1000px;
 }
 
 .choice {
@@ -144,11 +144,18 @@
 .choice-art .notches { stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; fill: none; }
 .choice-art .bark { stroke: var(--ink-soft); stroke-width: 1; fill: none; stroke-linecap: round; }
 .choice-art .tie { stroke: var(--ink-soft); stroke-width: 1.2; stroke-dasharray: 2 2.5; fill: none; }
+.choice-art .art-book path { fill: none; stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.choice-art .art-book .pages { fill: var(--paper-light); stroke-width: 2.2; }
+.choice-art .art-book .under { stroke-width: 1.4; }
+.choice-art .art-book .lines { stroke: var(--ink-soft); stroke-width: 1.3; }
+.choice-art .art-book .quill { fill: var(--paper-light); stroke-width: 1.6; }
+.choice-art .art-book .quill-vein { stroke-width: 1.2; }
+.choice-art #art-diary circle { fill: var(--paper-light); stroke: var(--ink); stroke-width: 1.8; }
 
 .choice-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(28px, 4vw, 36px);
+  font-size: clamp(28px, 3.3vw, 34px);
   line-height: 1.05;
   color: var(--ink-strong);
 }
@@ -198,8 +205,17 @@
   background: var(--rule);
 }
 
+@media (max-width: 920px) {
+  .choice { padding: 20px 16px 18px; }
+  .choice-title { font-size: clamp(22px, 3.2vw, 32px); }
+  .choice-text { font-size: 14.5px; }
+  .choice-go { font-size: 15px; letter-spacing: 0.02em; white-space: nowrap; }
+}
 @media (max-width: 680px) {
   .choices { grid-template-columns: 1fr; max-width: 440px; }
+  .choice-title { font-size: 30px; }
+  .choice-text { font-size: 15.5px; }
+  .choice-go { font-size: 17px; letter-spacing: 0.06em; }
   .choice { padding: 20px 18px 18px; }
   .choice-art { max-width: 250px; }
 }

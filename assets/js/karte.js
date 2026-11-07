@@ -20,9 +20,10 @@
     duty:    { name: 'Darbs un dienests' },
     tension: { name: 'Nesaskaņas' },
     mystery: { name: 'Noslēpums' },
-    sorcery: { name: 'Burvība un gari' }
+    sorcery: { name: 'Burvība un gari' },
+    place:   { name: 'Ceļi un vietas' }
   };
-  var TYPE_ORDER = ['kin', 'love', 'friend', 'oath', 'duty', 'tension', 'mystery', 'sorcery'];
+  var TYPE_ORDER = ['kin', 'love', 'friend', 'oath', 'duty', 'tension', 'mystery', 'sorcery', 'place'];
 
   var STATUS = {
     dead:    { m: 'miris',    f: 'mirusi' },
@@ -30,7 +31,20 @@
     away:    { m: 'aizgājis', f: 'aizgājusi' }
   };
 
-  var RADIUS = { pc: 46, npc: 31, shadow: 27 };
+  var RADIUS = { pc: 46, npc: 31, shadow: 27, place: 36 };
+
+  // Places are drawn as a diamond-shaped map marker instead of a round medallion.
+  function diamond(r) {
+    return 'M0 ' + f1(-r) + ' L' + f1(r) + ' 0 L0 ' + f1(r) + ' L' + f1(-r) + ' 0 Z';
+  }
+  // The marker's outline and inner line: a circle for people, a diamond for places.
+  function shape(p, r, inner) {
+    if (p.kind === 'place') {
+      return '<path class="disc" d="' + diamond(r * 1.12) + '"/>' +
+        (inner ? '<path class="ring" d="' + diamond(r * 1.12 - inner) + '"/>' : '');
+    }
+    return '<circle class="disc" r="' + r + '"/>' + (inner ? '<circle class="ring" r="' + (r - inner) + '"/>' : '');
+  }
 
   /* ---------------------------------------------------------------------
      Helpers
@@ -109,6 +123,18 @@
   var eventsOf = {};
   (S.events || []).forEach(function (ev) {
     (ev.people || []).forEach(function (id) { (eventsOf[id] = eventsOf[id] || []).push(ev); });
+  });
+
+  // diary entries each person wrote or is mentioned in ([[id|text]] links)
+  var diariesOf = {};
+  (S.diaries || []).forEach(function (d) {
+    var seen = {};
+    seen[d.author] = true;
+    (diariesOf[d.author] = diariesOf[d.author] || []).push(d);
+    (d.text || []).join(' ').replace(/\[\[([a-z0-9-]+)\|/g, function (all, id) {
+      if (!seen[id]) { seen[id] = true; (diariesOf[id] = diariesOf[id] || []).push(d); }
+      return all;
+    });
   });
 
   /* ---------------------------------------------------------------------
@@ -386,6 +412,27 @@
       var size = 13 + (t[1] - 30) / 130 * 13 + r() * 6;
       out.push(r() < 0.3 ? spruce(t[0], t[1] + size * 0.4, size * 0.95) : crown(t[0], t[1], size));
     });
+    // the Great Wood reaches down towards the places in it (Bālais kalns and others);
+    // its own random stream, so the rest of the sheet keeps its old look
+    var rw = rng(2026), deep = [];
+    var keepClear = people.filter(function (p) { return p.group === 'mezs' && typeof p.x === 'number'; })
+      .map(function (p) { return [p.x, p.y + 30, 95]; })
+      .concat([[1170, 440, 90], [1330, 590, 80], [1430, 205, 110], [1650, 580, 90]]);
+    for (var di = 0; di < 70; di++) {
+      var dx = 1240 + rw() * 520, dy = 196 + rw() * 300;
+      if (dy > 320 + (dx - 1240) * 0.4) continue;       // thin out towards the village
+      if (!keepClear.every(function (c) { return Math.hypot(dx - c[0], dy - c[1]) > c[2]; })) continue;
+      deep.push([dx, dy]);
+    }
+    deep.sort(function (a, b) { return a[1] - b[1]; });
+    var mainR = r;
+    r = rw;                                              // crown() and spruce() draw with r
+    deep.forEach(function (t) {
+      var size = 15 + rw() * 7;
+      out.push(rw() < 0.45 ? spruce(t[0], t[1] + size * 0.4, size * 0.95) : crown(t[0], t[1], size));
+    });
+    r = mainR;
+
     // undergrowth along the edge of the wood
     var edge = '';
     for (var ux = 480; ux < W - 160; ux += 9 + r() * 12) {
@@ -527,8 +574,7 @@
     var parts = [];
     parts.push('<circle class="halo" r="' + (r + 10) + '"/>');
     if (p.kind === 'pc') parts.push('<circle class="rim" r="' + (r + 6) + '"/>');
-    parts.push('<circle class="disc" r="' + r + '"/>');
-    parts.push('<circle class="ring" r="' + (r - 4.5) + '"/>');
+    parts.push(shape(p, r, 4.5));
     if (p.status === 'dead') parts.push('<circle class="hatching" r="' + (r - 4.5) + '"/>');
     parts.push(S.glyphMarkup(p.glyph, 0, 0, r * 1.22));
     if (p.status === 'missing' || p.status === 'away' || p.status === 'dead') {
@@ -542,7 +588,7 @@
         '<text class="name" y="' + (p.kind === 'pc' ? 24 : 18) + '">' + esc(p.name) + '</text>' +
         (sub ? '<text class="sub" y="' + (p.kind === 'pc' ? 44 : 34) + '">' + esc(sub) + '</text>' : '') +
       '</g>';
-    var aria = p.name + (p.role ? ', ' + p.role : '') + (st ? ', ' + st : '');
+    var aria = p.name + (p.kind === 'place' ? ', vieta' : '') + (p.role ? ', ' + p.role : '') + (st ? ', ' + st : '');
     return '<g class="node kind-' + esc(p.kind) + ' status-' + esc(p.status || 'alive') + '" data-person="' + esc(p.id) + '" ' +
       'transform="translate(' + f1(p.x) + ' ' + f1(p.y) + ')" tabindex="0" role="button" aria-label="' + esc(aria) + '">' +
       parts.join('') + label + '</g>';
@@ -939,19 +985,23 @@
     var r = 44;
     return '<svg class="medal kind-' + esc(p.kind) + ' status-' + esc(p.status || 'alive') + '" viewBox="-56 -56 112 112" width="' + size + '" height="' + size + '" aria-hidden="true">' +
       (p.kind === 'pc' ? '<circle class="rim" r="' + (r + 7) + '"/>' : '') +
-      '<circle class="disc" r="' + r + '"/><circle class="ring" r="' + (r - 5) + '"/>' +
+      shape(p, r, 5) +
       (p.status === 'dead' ? '<circle class="hatching" r="' + (r - 5) + '"/>' : '') +
       S.glyphMarkup(p.glyph, 0, 0, r * 1.25) + '</svg>';
   }
 
   function miniMedal(p) {
-    return '<svg class="mini kind-' + esc(p.kind) + '" viewBox="-36 -36 72 72" aria-hidden="true"><circle class="disc" r="31"/>' +
+    return '<svg class="mini kind-' + esc(p.kind) + '" viewBox="-36 -36 72 72" aria-hidden="true">' + shape(p, p.kind === 'place' ? 28 : 31, 0) +
       S.glyphMarkup(p.glyph, 0, 0, 40) + '</svg>';
   }
 
   function kicker(p) {
     if (p.kind === 'pc') return 'Spēlētāja tēls · ' + esc(p.playbook || '');
     if (p.kind === 'shadow') return 'Ēnā palicis tēls';
+    if (p.kind === 'place') {
+      var pg = S.groups && S.groups[p.group];
+      return 'Vieta' + (pg ? ' · ' + esc(pg.name) : '');
+    }
     var g = S.groups && S.groups[p.group];
     return g ? esc(g.name) : '';
   }
@@ -988,7 +1038,8 @@
     return '<section class="index" aria-labelledby="index-h"><h3 id="index-h" class="sr-only">Visi tēli</h3>' +
       sections.filter(function (s) { return s.list.length; }).map(function (s) {
         var list = s.list.slice().sort(function (a, b) {
-          return (a.kind === 'shadow') - (b.kind === 'shadow') || a.name.localeCompare(b.name, 'lv');
+          return (b.kind === 'place') - (a.kind === 'place') || (a.kind === 'shadow') - (b.kind === 'shadow') ||
+            a.name.localeCompare(b.name, 'lv');
         });
         return '<div class="index-group"><h4>' + esc(s.title) + '</h4><ul>' + list.map(function (p) {
           var st = statusText(p);
@@ -1027,10 +1078,11 @@
         byId[x.a === id ? x.b : x.a].name.localeCompare(byId[y.a === id ? y.b : y.a].name, 'lv');
     });
     var evs = eventsOf[id] || [];
+    var diaries = diariesOf[id] || [];
 
     body.innerHTML =
       '<button class="back text-btn" type="button" data-action="index">← Visi tēli</button>' +
-      '<article class="person">' +
+      '<article class="person kind-' + esc(p.kind) + '">' +
         '<header class="person-head">' + medal(p, 96) +
           '<div><p class="kicker">' + kicker(p) + '</p>' +
           '<h2>' + esc(p.name) + '</h2>' +
@@ -1049,6 +1101,11 @@
         (evs.length ? '<h3>Hronikā</h3><ul class="event-list">' + evs.map(function (ev) {
           return '<li><a href="hronika.html#' + encodeURIComponent(ev.id) + '"><span class="when">' + esc(ev.when) + '</span>' +
             '<span class="ev-title">' + esc(ev.title) + '</span></a></li>';
+        }).join('') + '</ul>' : '') +
+        (diaries.length ? '<h3>Dienasgrāmatās</h3><ul class="event-list diary-list">' + diaries.map(function (d) {
+          var w = byId[d.author];
+          return '<li><a href="dienasgramatas.html#' + encodeURIComponent(d.id) + '"><span class="when">' + d.session + '. sesija</span>' +
+            '<span class="ev-title">' + esc(w ? w.name : d.author) + (d.author === id ? (genderOf(p) === 'f' ? ' · pašas ieraksts' : ' · paša ieraksts') : '') + '</span></a></li>';
         }).join('') + '</ul>' : '') +
       '</article>';
   }
