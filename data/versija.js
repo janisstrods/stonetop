@@ -10,6 +10,6 @@
 window.STONETOP = window.STONETOP || {};
 
 STONETOP.version = {
-  number: '1.6',
+  number: '1.7',
   updated: '2026-11-14'
 };

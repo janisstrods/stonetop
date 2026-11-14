@@ -152,13 +152,13 @@ STONETOP.events = [
   {
     id: 'nakts-pie-gaztajiem-kokiem', era: 'kampana', when: 'Agrā pavasarī, naktī', yearsAgo: null, session: 2,
     title: 'Nakts pie gāztajiem kokiem',
-    text: 'Rūnai ir pretrunīgas jūtas par to, ka koki gāzās viņas dēļ: viņa pazīst dabas nežēlību un jūt, ka tas Danu jāatlīdzina. Danu mīl lavandu, tāpēc Rūna izkaisa lavandas lapas un dzied īsu lūgšanu. Naktī atgriežas bālais krinvins, un Beviana vīri to atkal sakapā gabalos; no rīta tā ķermeņa vairs nav. Hanss klusām aizlavās no nometnes. Vienība raizējas, bet Bevians ir nežēlīgs: „Varbūt atradīsim viņu mirušu. Tā notiek ar tiem, kas neklausa pavēlēm.”',
-    glyph: 'moon', people: ['runa', 'bevians', 'hanss']
+    text: 'Rūnai ir pretrunīgas jūtas par to, ka koki gāzās viņas dēļ: viņa pazīst dabas nežēlību un jūt, ka tas Danu jāatlīdzina. Danu mīl lavandu, tāpēc Rūna izkaisa lavandas lapas un dzied īsu lūgšanu. Naktī atgriežas bālais krinvins, un Beviana vīri to atkal sakapā gabalos. No rīta tā ķermeņa vairs nav, bet Petrova un suņu brūces ir sadzijušas. Tonakt Hanss klusām aizlavās no nometnes. Vienība raizējas, bet Bevians par Hansu un pazudušo Po runā nežēlīgi: „Varbūt atradīsim viņus mirušus. Tā notiek ar tiem, kas nepaklausa pavēlēm.”',
+    glyph: 'moon', people: ['runa', 'bevians', 'hanss', 'petrovs', 'po']
   },
   {
     id: 'bala-kirzaka', era: 'kampana', when: 'Agrā pavasarī, naktī', yearsAgo: null, session: 2,
     title: 'Bālā ķirzaka',
-    text: 'Made Jete jūt bijību pret mežu un saprot, ka krinvini grib zagt cirvjus un darbarīkus. Hektumeļa Kodekss viņu kārdina, un viņa sāk runāt ar Hektumeli, kas lūr ēnā kā bāla ķirzaka. Made Jete neguļ: visu nakti Hektumelis viņai māca burvestību, kas šķiet kā miegs, kā miers, kā sastingums. Viņa jūt, ka pretī kaut ko atdevusi, bet savu biedru vārdus viņa tam nav teikusi — tikai Gvendolīnas.',
+    text: 'Made Jete jūt bijību pret mežu un saprot, ka krinvini grib zagt cirvjus un darbarīkus. Hektumeļa Kodekss viņu kārdina, un viņa sāk runāt ar Hektumeli, kas lūr ēnā kā bāla ķirzaka. Made Jete neguļ: visu nakti Hektumelis viņai māca miega burvestību, kas ir kā snauda, kā miers, kā sastingums. Viņa jūt, ka pretī kaut ko atdevusi, bet savu biedru vārdus viņa tam nav teikusi — tikai Gvendolīnas.',
     glyph: 'lizard', people: ['made-jete', 'hektumelis', 'gvendolina']
   },
   {
@@ -170,19 +170,19 @@ STONETOP.events = [
   {
     id: 'apsestais-kuilis', era: 'kampana', when: 'Agrā pavasarī', yearsAgo: null, session: 2,
     title: 'Apsēstais kuilis',
-    text: 'Uzbrūk mežakuilis, ko pārņēmuši Bālā kalna augļi: āda tam lobās, starp sariem zvīņaini plankumi. Made Jete ar burvestību to iemidzina, un Bevians to sakapā. Rūna aplūko kuiļa ķermeni: zarnās ieaugušas sīkas, zobiem līdzīgas sēkliņas, un samaitātības dzīslas iesniedzas mugurkaulā un vada zvēru. Tikmēr Made Jete apēd pēdējo augli un uzzina, kā panākt to, ko viņa vēlas visvairāk, — mieru ciemā: krinvini nedrīkst iekļūt kalnā.',
+    text: 'Uzbrūk mežakuilis, ko pārņēmuši Bālā kalna augļi: āda tam lobās, starp sariem zvīņaini plankumi. Made Jete apbur kuili ar miega burvestību, un Bevians to sakapā. Rūna aplūko kuiļa ķermeni: zarnās ieaugušas sīkas, zobiem līdzīgas sēkliņas, un samaitātības dzīslas iesniedzas mugurkaulā un vada zvēru. Tikmēr Made Jete apēd pēdējo augli un uzzina, kā panākt to, ko viņa vēlas visvairāk, — mieru ciemā: krinvini nedrīkst iekļūt kalnā.',
     glyph: 'fruit', people: ['made-jete', 'bevians', 'runa', 'balais-kalns']
   },
   {
     id: 'balaja-kalna', era: 'kampana', when: 'Agrā pavasarī', yearsAgo: null, session: 2,
     title: 'Bālajā kalnā',
-    text: 'Bālajā kalnā ceļinieki atrod Gvendolīnu: viņa jau ir ēdusi augļus un krinvinu pulkā ar Hansa cirvi cērt kalnā caurumu. Īsā cīņā viņa mēģina Rūnai iebarot augli, bet Rūna, Danu iedvesmota, to neļauj. Made Jete mēģina Gvendolīnu apburt, bet Hektumelis iezīmē pašu Madi Jeti. Lai Gvendolīnu pierunātu, Made Jete apēd vēl vienu augli — un šoreiz augļi pārņem viņu: Made Jete ir samaitāta. Gvendolīnu izdodas pierunāt, un abas, augļus nesdamas, dodas uz ciemu. Krinvini tagad turas pa gabalu un pielavās kalnam tikai tādēļ, lai nozagtu augļus un tos aiznestu.',
+    text: 'Bālajā kalnā ceļinieki atrod Gvendolīnu: viņa jau ir ēdusi augļus un krinvinu pulkā ar Hansa cirvi cērt kalnā caurumu. Īsā cīņā viņa mēģina Rūnai iebarot augli, bet Rūna, Danu iedvesmota, to neļauj. Made Jete mēģina Gvendolīnu apburt, bet Hektumelis iezīmē pašu Madi Jeti: viņas miesa atdziest, un viss tajā sāk ritēt lēnāk. Lai Gvendolīnu pierunātu, Made Jete apēd vēl vienu augli — un šoreiz augļi pārņem viņu: Made Jete ir samaitāta. Gvendolīnu izdodas pierunāt, un abas, augļus nesdamas, dodas uz ciemu. Krinvini tagad turas pa gabalu un pielavās kalnam tikai tādēļ, lai nozagtu augļus un tos aiznestu.',
     glyph: 'palehill', people: ['gvendolina', 'hanss', 'runa', 'made-jete', 'hektumelis', 'balais-kalns']
   },
   {
     id: 'lielais-ugunskurs', era: 'kampana', when: 'Agrā pavasarī', yearsAgo: null, session: 2,
     title: 'Lielais ugunskurs',
-    text: 'Rūna uzrunā koku garu un sastop Daženu. Tad Rūna lūdz Bevianu visu nodedzināt. Kirkaļi atvaira krinvinus, sakapā saknes un kokus un sadedzina tos lielā ugunskurā; viņu vidū ir arī Deķis, kurš tic Toram, zibens un spēka dievam. Caurumu viņi aizber ar zemi un akmeņiem, virsū noliek Beviana vairogu un uzvelk uz tā tās pašas zīmes, kas tur krinvinus pa gabalu. Darbs prasa laiku, tāpēc Made Jete un Gvendolīna ciemā nonāks pirmās.',
+    text: 'Rūna uzrunā koku garu un sastop Daženu Vareno, Daženu Briesmīgo. Tad Rūna lūdz Bevianu visu nodedzināt. Kirkaļi atvaira krinvinus, sakapā saknes un kokus un sadedzina tos lielā ugunskurā; viņu vidū ir arī Deķis, kurš tic Toram, zibens un spēka dievam. Caurumu viņi aizber ar zemi un akmeņiem, virsū noliek Beviana vairogu un uzvelk uz tā tās pašas zīmes, kas tur krinvinus pa gabalu. Darbs prasa laiku, tāpēc Made Jete un Gvendolīna ciemā nonāks pirmās.',
     glyph: 'sun', people: ['runa', 'dazena', 'bevians', 'dekis', 'balais-kalns', 'made-jete', 'gvendolina']
   }
 ];

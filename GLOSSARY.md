@@ -35,9 +35,9 @@ The GM fixes the spellings. Pronouns follow the name ending: -s/-š/-is/-us/-ss 
 | Aratiss | Aratisa | Aratisam | Aratisu | god; the table's spelling since 2026-11-07 (was Aratis, Arata, Aratim) |
 | Danu | Danu | Danu | Danu | goddess; doesn't decline |
 | Deķis | Deķa | Deķim | Deķi | Kirkaļu karotājs |
-| Dažena | Daženas | Daženai | Daženu | she/her; role „vara Bālajā kalnā”; her epithets are left out until the GM confirms the table's wording |
+| Dažena | Daženas | Daženai | Daženu | she/her; role „vara Bālajā kalnā”; epithets (the table's): Dažena Varenā, Dažena Briesmīgā (acc. Daženu Vareno, Daženu Briesmīgo) |
 | Hektumelis | Hektumeļa | Hektumelim | Hektumeli | referred to as „tas”; it appears „ēnā kā bāla ķirzaka” |
-| Tors | Tora | Toram | Toru | god, „zibens un spēka dievs”; provisional until the GM confirms the table's form |
+| Tors | Tora | Toram | Toru | god, „zibens un spēka dievs”; the table's form (English notes: Tor) |
 | Ville, Vallo | | | | Rūna's two mastiffs; ask the GM how they decline before using them outside the nominative |
 
 ## Places and the world
@@ -112,10 +112,16 @@ The GM fixes the spellings. Pronouns follow the name ending: -s/-š/-is/-us/-ss 
 | the fruit takes hold of someone | augļi pārņem (kādu) |
 | force fruit on someone | iebarot (kam) augli; never „piebarot” (to fatten) |
 | greatest desire | tas, ko viņa vēlas visvairāk / lielākā vēlēšanās; avoid „vēlme” |
-| Hektumelis marks someone | iezīmēt; always name the person marked |
-| Torpor (the Codex spell) | not named yet; described as „burvestība, kas šķiet kā miegs, kā miers, kā sastingums” until the GM confirms the table's name |
+| Hektumelis marks someone | iezīmēt; always name the person marked. Made Jete's mark (cooled body, slowed metabolism): „miesa atdzisa, un viss tajā rit lēnāk”; avoid „vielmaiņa” (too modern) |
+| Torpor (the Codex spell) | miega burvestība (the table had no name; GM's choice) |
 | wild boar | mežakuilis, short kuilis; its hair: sari; possessed boar: apsēstais kuilis |
 | lavender | lavanda |
+| feels the cold badly / eats only every other day (Made Jete's mark) | aukstumu panes slikti (never „aukstums nāk grūti”) / ēst vajag tikai ik otro dienu |
+| what the sleep spell feels like | kā snauda, kā miers, kā sastingums (avoid „miega burvestība, kas šķiet kā miegs”) |
+| (the fruit) left no mark | nekādas pēdas neatstāja; keep „zīme/zīmes” for the script and „iezīmēt” for Hektumelis |
+| Bevians' line in Session 2 | „Varbūt atradīsim viņus mirušus. Tā notiek ar tiem, kas nepaklausa pavēlēm.”; he speaks of them: „par Hansu un pazudušo Po runā nežēlīgi” |
+| healed up overnight | līdz rītam brūces ir sadzijušas / naktī pie gāztajiem kokiem brūce sadzija |
+| Dažena's epithets inside a sentence | set off with dashes: „sastapa Daženu — Daženu Vareno, Daženu Briesmīgo — un…” |
 | pyre | liels ugunskurs; avoid „sārts” (clashes with „sārti oranži”) |
 | drill (unit practice) | vingrinājumi |
 | obey orders | paklausīt pavēlēm (dat.) / pildīt pavēles; never „klausīt pavēlēm” |
