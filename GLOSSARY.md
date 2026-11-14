@@ -34,6 +34,10 @@ The GM fixes the spellings. Pronouns follow the name ending: -s/-š/-is/-us/-ss 
 | Zbigņevs | Zbigņeva | Zbigņevam | Zbigņevu | „tēvs Zbigņevs” |
 | Aratiss | Aratisa | Aratisam | Aratisu | god; the table's spelling since 2026-11-07 (was Aratis, Arata, Aratim) |
 | Danu | Danu | Danu | Danu | goddess; doesn't decline |
+| Deķis | Deķa | Deķim | Deķi | Kirkaļu karotājs |
+| Dažena | Daženas | Daženai | Daženu | she/her; role „vara Bālajā kalnā”; her epithets are left out until the GM confirms the table's wording |
+| Hektumelis | Hektumeļa | Hektumelim | Hektumeli | referred to as „tas”; it appears „ēnā kā bāla ķirzaka” |
+| Tors | Tora | Toram | Toru | god, „zibens un spēka dievs”; provisional until the GM confirms the table's form |
 | Ville, Vallo | | | | Rūna's two mastiffs; ask the GM how they decline before using them outside the nominative |
 
 ## Places and the world
@@ -57,6 +61,10 @@ The GM fixes the spellings. Pronouns follow the name ending: -s/-š/-is/-us/-ss 
 | the Great Wood, as a map region | Lielais mežs |
 | the stream (crossed backwards) | strauts; „šķērso strautu atmuguriski” (Made Jete's diary says „upe”; the site follows the notes) |
 | the pale crinwin | bālais krinvins |
+| the Stone (in the village) | ciema Akmens (capitalised; loc. ciema Akmenī) |
+| the script that keeps the crinwin away | zīmes, kas tur krinvinus pa gabalu; the pattern itself: raksts. Don't put the adverb „tur” next to it |
+| the spirit of the trees | koku gars; commune with it: uzrunāt koku garu (keep „sazināties” for mediated contact, e.g. via Aidens) |
+| the unit's camp / Gvendolīna's campsite | nometne / apmetne |
 | the tool thefts | darbarīku zādzības; „zūd darbarīki” |
 | deadwood | kritalas |
 | Made Jete's unknown mother | Svešiniece |
@@ -100,6 +108,17 @@ The GM fixes the spellings. Pronouns follow the name ending: -s/-š/-is/-us/-ss 
 | moonshine (distilled with oak bark) | kandža; „dzīt kandžu” |
 | the compact with the Forest Folk | derība (Made Jete's diary says „līgums”; keep that word there) |
 | the fruit of Bālais kalns | Bālā kalna augļi: sārti oranži, bumbierim līdzīgi, zvīņaina miza, sīki zobi sēklu vietā |
+| corrupted / corruption | samaitāta, samaitāt, samaitātība; physical streaks: samaitātības dzīslas |
+| the fruit takes hold of someone | augļi pārņem (kādu) |
+| force fruit on someone | iebarot (kam) augli; never „piebarot” (to fatten) |
+| greatest desire | tas, ko viņa vēlas visvairāk / lielākā vēlēšanās; avoid „vēlme” |
+| Hektumelis marks someone | iezīmēt; always name the person marked |
+| Torpor (the Codex spell) | not named yet; described as „burvestība, kas šķiet kā miegs, kā miers, kā sastingums” until the GM confirms the table's name |
+| wild boar | mežakuilis, short kuilis; its hair: sari; possessed boar: apsēstais kuilis |
+| lavender | lavanda |
+| pyre | liels ugunskurs; avoid „sārts” (clashes with „sārti oranži”) |
+| drill (unit practice) | vingrinājumi |
+| obey orders | paklausīt pavēlēm (dat.) / pildīt pavēles; never „klausīt pavēlēm” |
 
 ## Site furniture
 
@@ -136,7 +155,7 @@ Unnamed or unknown figures (`kind: 'shadow'`) get the kicker "Ēnā palicis tēl
 - **Avoid these words:** komandieris, komandēt, ģenerālis, ierindnieks, patruļa, pakļautībā, disputs, ragana. („Paviljons” is fine now: the table calls it Dievu paviljons.)
 - **Faithfulness.** Translate what the notes say. Don't add causes, adjectives or scenes the notes don't contain, and don't drop facts that matter.
 - **Person cards (`about`).** Lead with who the person is. Write in the past tense for backstory and the present tense for traits. Use two to six sentences.
-- **Relationship labels.** Two to four words. A label is printed on the line and shown on *both* people's cards. If it only makes sense from one side (e.g. "uzsūtīja garu"), fill in `aIs` and `bIs`. `aIs` is what A is to B, and `bIs` is what B is to A.
+- **Relationship labels.** Two to four words. A label is printed on the line and shown on *both* people's cards. If it only makes sense from one side (e.g. "uzsūtīja garu"), fill in `aIs` and `bIs`. `aIs` is what A is to B, and `bIs` is what B is to A. An `aIs`/`bIs` string must never name the owner of the card it appears on; use „viņa/viņš/tas”.
 - **Chronicle (`notikumi.js`).** Write in the historical present ("Grants pārnāk…, drīz mirst").
 - **Dates.** Write them like "Pirms kādiem 24 gadiem", "Pirms laba mēneša", "Pirms paaudzes (gads nezināms)". Never use "~". Spell out numbers up to ten in words.
 - **Pronouns.** Prefer the name over "viņš/viņa" whenever a pronoun could point to two people.

@@ -246,6 +246,18 @@ STONETOP.glyphs = {
     <path d="M32 17 L32 55" stroke-width="2"/>
     <path d="M11 22 Q19 20 27 23 M11 29 Q19 27 27 30 M11 36 Q19 34 27 37 M11 43 Q17 41.5 23 43.5 M37 23 Q45 20 53 22 M37 30 Q45 27 53 29 M37 37 Q45 34 53 36" stroke-width="1.3"/>`,
 
+  // Deķis — a lightning bolt, for Tors, the god of lightning and power
+  lightning: `
+    <path class="f" d="M40 3 L15 35 L29 35 L21 61 L49 25 L35 25 L45 3 Z"/>
+    <path d="M10 16 L5 13 M54 40 L59 43 M51 50 L55 55" stroke-width="1.4"/>`,
+
+  // Hektumelis — a pale lizard seen from above
+  lizard: `
+    <path d="M32 46 Q34 56 42 58 Q50 59 53 53" stroke-width="3"/>
+    <path d="M29.5 21 L21 17 L16 11 M34.5 21 L43 17 L48 11 M30 38 L21 42 L17 49 M34 38 L43 42 L47 49" stroke-width="2.4"/>
+    <path class="f" d="M32 4 Q38 7 36.5 14 L35.5 20 Q39 30 35.5 42 Q33.5 48 32 48 Q30.5 48 28.5 42 Q25 30 28.5 20 L27.5 14 Q26 7 32 4 Z"/>
+    <circle class="p" cx="29.8" cy="9.5" r="1.4"/><circle class="p" cx="34.2" cy="9.5" r="1.4"/>`,
+
   // Event glyphs ----------------------------------------------------------
   // Crinwin attack — raking claw marks
   claws: `

@@ -43,7 +43,7 @@ STONETOP.people = [
     id: 'runa', name: 'Rūna', kind: 'pc', group: 'akmengals',
     playbook: 'Svētītā', role: 'Danu priestere', glyph: 'sapling', status: 'alive',
     x: 900, y: 450,
-    about: 'Meža bērns ar ugunīgi rudiem matiem — tādu nav nevienam citam Akmeņgalā. Ciemā viņa ieradās ap desmit gadu vecumā un no agrākās dzīves atceras vien mežu un mīkstas sūnas. Jau toreiz viņai bija līdzi svētais maciņš — laikam dzimtas mantojums. Viņa ir ceļvede medniekiem un meža velšu vācējiem un sagaida, ka tie dzīvos pēc dabas un Danu likumiem. Kopš rituāla pirms diviem gadiem viņa ir Danu augstā priestere Akmeņgalā. Ļaudis nes viņai ziedojumus: augļus un svaigu lietusūdeni. Viņai allaž līdzās ir divi mastifi, Ville un Vallo.'
+    about: 'Meža bērns ar ugunīgi rudiem matiem — tādu nav nevienam citam Akmeņgalā. Ciemā viņa ieradās ap desmit gadu vecumā un no agrākās dzīves atceras vien mežu un mīkstas sūnas. Jau toreiz viņai bija līdzi svētais maciņš — laikam dzimtas mantojums. Viņa ir ceļvede medniekiem un meža velšu vācējiem un sagaida, ka tie dzīvos pēc dabas un Danu likumiem. Kopš rituāla pirms diviem gadiem viņa ir Danu augstā priestere Akmeņgalā. Ļaudis nes viņai ziedojumus: augļus un svaigu lietusūdeni. Viņai allaž līdzās ir divi mastifi, Ville un Vallo. Bālajā kalnā viņa atteicās no augļa, ko Gvendolīna viņai uzspieda, uzrunāja koku garu, sastapa Daženu un lūdza Bevianu visu tur nodedzināt.'
   },
   {
     id: 'bevians', name: 'Bevians', kind: 'pc', group: 'akmengals',
@@ -55,7 +55,7 @@ STONETOP.people = [
     id: 'made-jete', name: 'Made Jete', kind: 'pc', group: 'akmengals',
     playbook: 'Meklētāja', role: 'dziedniece un zintniece', glyph: 'whisk', status: 'alive',
     x: 1080, y: 690,
-    about: 'Akmeņgala dziedniece un zintniece, trīsdesmit astoņus gadus veca, mazliet apaļīga. Ļoti zinātkāra, taču pienākumu viņa nekad neaizmirst. Kopj zāļu dārzu, tecina zāles un kā acuraugu sargā savu melno pirti, kur dziedina slimos un kur nāk pasaulē lielākā daļa ciema bērnu. Pirtī glabājas arī Hektumeļa Kodekss: praktiska labuma no tā nav, taču tas viņu kārdina un, bez šaubām, sūta viņai sapņus. No meža viņa mazliet baidās, toties nāve un Tie, kas Apakšā, viņu vilina arvien vairāk.'
+    about: 'Akmeņgala dziedniece un zintniece, trīsdesmit astoņus gadus veca, mazliet apaļīga. Ļoti zinātkāra, taču pienākumu viņa nekad neaizmirst. Kopj zāļu dārzu, tecina zāles un kā acuraugu sargā savu melno pirti, kur dziedina slimos un kur nāk pasaulē lielākā daļa ciema bērnu. Pirtī glabājas arī Hektumeļa Kodekss: praktiska labuma no tā nav, taču tas viņu kārdina un, bez šaubām, sūta viņai sapņus. No meža viņa mazliet baidās, toties nāve un Tie, kas Apakšā, viņu vilina arvien vairāk. Lielajā mežā Hektumelis, kas ēnā lūr kā bāla ķirzaka, viņai iemācīja burvestību un Bālajā kalnā viņu iezīmēja; tur kalna augļi, ko viņa ēda otrreiz, viņu samaitāja, un nu viņa ar Gvendolīnu nes tos uz ciemu.'
   },
 
   /* ---------- Beviana dzimta ---------- */
@@ -87,15 +87,15 @@ STONETOP.people = [
   /* ---------- Gvendolīnas saime ---------- */
   {
     id: 'gvendolina', name: 'Gvendolīna', kind: 'npc', group: 'akmengals',
-    role: 'medniece', glyph: 'bow', status: 'missing',
+    role: 'medniece', glyph: 'bow', status: 'alive',
     x: 620, y: 340,
-    about: 'Lieliska medniece, kas mežā jūtas kā mājās. Rūnas tuvā draudzene un vienaudze, Hansa sieva, Otto un Paula māte. Šopavasar viņa ar Paulu devās uz Bālo kalnu un salasīja augļus no trim kokiem, kas tur aug. Tad krinvini viņu paņēma, bet Pauls aizbēga.'
+    about: 'Lieliska medniece, kas mežā jūtas kā mājās. Rūnas tuvā draudzene un vienaudze, Hansa sieva, Otto un Paula māte. Šopavasar viņa ar Paulu devās uz Bālo kalnu un salasīja augļus no trim kokiem, kas tur aug. Tad krinvini viņu paņēma, bet Pauls aizbēga. Kad viņu atrada Bālajā kalnā, viņa jau bija ēdusi augļus un krinvinu pulkā ar Hansa cirvi cirta kalnā caurumu. Made Jete viņu pierunāja, un nu abas, augļus nesdamas, dodas uz ciemu.'
   },
   {
-    id: 'hanss', name: 'Hanss', kind: 'npc', group: 'akmengals',
-    role: 'zemnieks un karotājs', glyph: 'sickle', status: 'alive',
-    x: 440, y: 400,
-    about: 'Godīgs zemnieks, kas dien Beviana vienībā. Gvendolīnas vīrs, Otto un Paula tēvs. Kad krinvini paņēma Gvendolīnu, viņš pieprasīja, lai Bevians rīkojas, un kopā ar vienību devās sievu meklēt.'
+    id: 'hanss', name: 'Hanss', kind: 'npc', group: 'mezs',
+    role: 'zemnieks un karotājs', glyph: 'sickle', status: 'missing',
+    x: 1470, y: 480,
+    about: 'Godīgs zemnieks, kas dien Beviana vienībā. Gvendolīnas vīrs, Otto un Paula tēvs. Kad krinvini paņēma Gvendolīnu, viņš pieprasīja, lai Bevians rīkojas, un kopā ar vienību devās sievu meklēt. Naktī pie gāztajiem kokiem viņš klusām aizlavījās no nometnes un kopš tās nakts nav redzēts. Bālajā kalnā Gvendolīnai rokās bija viņa cirvis.'
   },
   {
     id: 'otto', name: 'Otto', kind: 'npc', group: 'akmengals',
@@ -175,6 +175,18 @@ STONETOP.people = [
     about: 'Naivs karotājs Beviana vienībā. Viņš ir iemīlējies Madē Jetē, bet viņa to vēl nenojauš. Lielajā mežā, kad koki sāka gāzties, viņš pēdējā brīdī izrāva Madi Jeti no krītošas priedes ceļa, bet pats tika savainots.'
   },
   {
+    id: 'dekis', name: 'Deķis', kind: 'npc', group: 'akmengals',
+    role: 'Kirkaļu karotājs', glyph: 'lightning', status: 'alive',
+    x: 820, y: 960,
+    about: 'Karotājs Beviana vienībā, dievbijīgs vīrs: tic Toram, zibens un spēka dievam. Bālajā kalnā viņš kopā ar citiem Kirkaļiem cirta un dedzināja kokus un aizbēra caurumu.'
+  },
+  {
+    id: 'hektumelis', name: 'Hektumelis', kind: 'shadow', group: 'akmengals',
+    role: 'ēnā kā bāla ķirzaka', glyph: 'lizard', status: 'unknown',
+    x: 1230, y: 830,
+    about: 'Hektumelis lūr ēnā kā bāla ķirzaka un runā čukstošā, kārdinošā balsī. Lielajā mežā Made Jete, Hektumeļa Kodeksa kārdināta, sāka ar to runāt, un visu nakti tas mācīja viņai burvestību, kas šķiet kā miegs, kā miers, kā sastingums. Made Jete jūt, ka pretī kaut ko atdevusi. Savu biedru vārdus viņa tam nav atklājusi — tikai Gvendolīnas. Bālajā kalnā, kad Made Jete mēģināja apburt Gvendolīnu, Hektumelis iezīmēja pašu Madi Jeti.'
+  },
+  {
     id: 'zemnieks', name: 'Zemnieks', kind: 'shadow', group: 'akmengals',
     role: 'vārds nezināms', glyph: 'pitchfork', status: 'unknown',
     x: 1030, y: 1010,
@@ -184,9 +196,9 @@ STONETOP.people = [
   /* ---------- Lielais mežs ---------- */
   {
     id: 'balais-kalns', name: 'Bālais kalns', kind: 'place', group: 'mezs',
-    role: 'kalns ar trim kokiem', glyph: 'palehill',
+    role: 'kalns dziļi mežā', glyph: 'palehill',
     x: 1610, y: 300,
-    about: 'Kalns dziļi Lielajā mežā. Tā tuvumā nav iestaigātu taku — tikai biezoknis un vietas, kur cilvēki reti sper kāju. Kalnā aug trīs koki, kas jau agrā pavasarī nesa pārgatavojušos augļus: sārti oranžus, bumbieriem līdzīgus, ar savādi zvīņainu mizu. Sēklu vietā tajos ir kaut kas līdzīgs sīkiem zobiem, un augļi ož pēc salkana puvuma, sajaukta ar medu. Rūna no bērnības atceras, ka krinvini jātur pa gabalu no kalna, bet kāpēc — vairs nezina.'
+    about: 'Kalns dziļi Lielajā mežā. Tā tuvumā nav iestaigātu taku — tikai biezoknis un vietas, kur cilvēki reti sper kāju. Kalnā auga trīs koki, kas jau agrā pavasarī nesa pārgatavojušos augļus: sārti oranžus, bumbieriem līdzīgus, ar savādi zvīņainu mizu. Sēklu vietā tajos ir kaut kas līdzīgs sīkiem zobiem, un augļi ož pēc salkana puvuma, sajaukta ar medu. Rūna no bērnības atceras, ka krinvini jātur pa gabalu no kalna, bet kāpēc — vairs nezina. Tagad koki ir sakapāti un sadedzināti. Caurumu, ko kalnā cirta krinvini, Kirkaļi aizbēra ar zemi un akmeņiem un virsū nolika Beviana vairogu ar zīmēm, kas tur krinvinus pa gabalu.'
   },
   {
     id: 'akmens-gars', name: 'Akmens gars', kind: 'shadow', group: 'mezs',
@@ -195,9 +207,16 @@ STONETOP.people = [
     about: 'Sens, nesteidzīgs gars, kas mīt apsūnojušā akmenī Lielajā mežā, otrpus strautam. Cilvēku rūpes tam šķiet gaistošas, un tas neredz iemesla iejaukties. Rūna nolika pie akmens seģeni kā ziedojumu un pārliecināja garu, ka arī īslaicīgām lietām ir nozīme. Tad no akmens dzīlēm atskanēja dunoņa, un apkārtējie koki, izraudami saknes, gāzās virsū krinviniem.'
   },
   {
+    id: 'dazena', name: 'Dažena', kind: 'shadow', group: 'mezs',
+    role: 'vara Bālajā kalnā', glyph: 'tree', status: 'unknown',
+    x: 1730, y: 200,
+    about: 'Vara Bālajā kalnā. Rūna, uzrunājusi koku garu, sastapa Daženu. Pēc tam Rūna lūdza Bevianu visu nodedzināt, un Kirkaļi sakapāja un sadedzināja saknes un kokus.'
+  },
+  {
     id: 'po', name: 'Po', kind: 'npc', group: 'mezs',
     role: 'Kirkaļu karotājs', glyph: 'footprints', status: 'missing',
-    about: 'Pārgalvīgs karotājs Beviana vienībā. Pēc krinvinu uzbrukuma, kad pie apsūnojušā akmens gāzās koki, viņš neatgriezās pie pārējiem. Tagad Po ir pazudis kaut kur Lielajā mežā.'
+    x: 1210, y: 300,
+    about: 'Pārgalvīgs un iedomīgs vienacains karotājs Beviana vienībā; allaž grib izrādīties un uzvarēt. Vingrinājumos viņš iesita Hansam, un Bevians teica Po, ka uzvarai vajag disciplīnas. Pēc krinvinu uzbrukuma, kad pie apsūnojušā akmens gāzās koki, viņš neatgriezās pie pārējiem. Tagad Po ir pazudis kaut kur Lielajā mežā.'
   },
 
   /* ---------- Purmale ---------- */
@@ -258,7 +277,7 @@ STONETOP.bonds = [
     text: 'Visas Akmeņgala vienības ir pakļautas karavadonim Adrianusam. Bevians savu vienību vada tikai mēnesi.' },
   { a: 'bevians', b: 'hanss', type: 'duty', label: 'dien vienībā',
     aIs: 'vienības vadonis', bIs: 'karotājs viņa vienībā',
-    text: 'Hanss dien Beviana vienībā. Bevianam patīk visa Hansa ģimene.' },
+    text: 'Hanss dien Beviana vienībā. Bevianam patīk visa Hansa ģimene. Kad Hanss naktī aizlavījās no nometnes, Bevians bija nežēlīgs: „Varbūt atradīsim viņu mirušu. Tā notiek ar tiem, kas nepaklausa pavēlēm.”' },
   { a: 'bevians', b: 'jorats', type: 'duty', label: 'lika atstāt dzīvu',
     aIs: 'vienības vadonis', bIs: 'labākais vienības cīnītājs',
     text: 'Kad zemnieks apsūdzēja Joratu lāstā, Bevians pavēlēja viņu atstāt dzīvu.' },
@@ -268,6 +287,14 @@ STONETOP.bonds = [
   { a: 'bevians', b: 'po', type: 'duty', label: 'dien vienībā',
     aIs: 'vienības vadonis', bIs: 'karotājs viņa vienībā',
     text: 'Po dien Beviana vienībā un kopš krinvinu uzbrukuma Lielajā mežā ir pazudis.' },
+  { a: 'bevians', b: 'po', type: 'tension', label: 'strīds par disciplīnu',
+    text: 'Vingrinājumos Po, gribēdams izrādīties un uzvarēt, iesita Hansam. Bevians teica Po, ka uzvarai vajag disciplīnas, un abi mazliet sastrīdējās.' },
+  { a: 'po', b: 'hanss', type: 'tension', label: 'iesita vingrinājumos',
+    aIs: 'iesita viņam', bIs: 'saņēma viņa sitienu',
+    text: 'Vingrinājumos Po, gribēdams izrādīties, iesita Hansam.' },
+  { a: 'bevians', b: 'dekis', type: 'duty', label: 'dien vienībā',
+    aIs: 'vienības vadonis', bIs: 'karotājs viņa vienībā',
+    text: 'Deķis dien Beviana vienībā.' },
   { a: 'bevians', b: 'gvendolina', type: 'friend', label: 'vienaudži',
     text: 'Abi ir vienā vecumā, un Bevianam patīk Gvendolīnas ģimene.' },
   { a: 'bevians', b: 'jolanta', type: 'love', label: 'mīļotie',
@@ -315,6 +342,15 @@ STONETOP.bonds = [
   { a: 'runa', b: 'akmens-gars', type: 'sorcery', label: 'ziedojums un lūgums',
     aIs: 'lūdza tā palīdzību', bIs: 'uzklausīja viņas lūgumu',
     text: 'Rūna nolika pie akmens seģeni kā ziedojumu un pārliecināja garu, ka arī īslaicīgām lietām ir nozīme. Gars sadrebināja zemi, un koki gāzās virsū krinviniem.' },
+  { a: 'made-jete', b: 'hektumelis', type: 'sorcery', label: 'mācība un zīme',
+    aIs: 'mācījās no tā', bIs: 'iemācīja burvestību, iezīmēja',
+    text: 'Visu nakti Lielajā mežā Hektumelis mācīja Madei Jetei burvestību, un viņa jūt, ka pretī kaut ko atdevusi. Bālajā kalnā, kad Made Jete mēģināja apburt Gvendolīnu, Hektumelis iezīmēja pašu Madi Jeti.' },
+  { a: 'hektumelis', b: 'gvendolina', type: 'mystery', label: 'zina viņas vārdu',
+    aIs: 'zina viņas vārdu', bIs: 'tam zināms viņas vārds',
+    text: 'Made Jete Hektumelim atklāja tikai Gvendolīnas vārdu, ne savu biedru vārdus.' },
+  { a: 'runa', b: 'dazena', type: 'sorcery', label: 'satikšanās kalnā',
+    aIs: 'sastapa viņu', bIs: 'vara, ko viņa sastapa',
+    text: 'Bālajā kalnā Rūna, uzrunājusi koku garu, sastapa Daženu un pēc tam lūdza Bevianu visu nodedzināt.' },
 
   /* ---------- Jorata lieta ---------- */
   { a: 'zemnieks', b: 'jorats', type: 'tension', label: 'apsūdzēja lāstā',
@@ -350,15 +386,21 @@ STONETOP.bonds = [
   { a: 'adarina', b: 'pauls', type: 'duty', label: 'pieskata zēnu',
     aIs: 'pieskata viņu', bIs: 'viņas gādībā',
     text: 'Kamēr Hanss ar vienību meklē Gvendolīnu, Adarīna pieskata Paulu un Otto.' },
-  { a: 'gvendolina', b: 'balais-kalns', type: 'place', label: 'lasīja tur augļus',
-    aIs: 'lasīja tur augļus', bIs: 'tur viņa lasīja augļus',
-    text: 'Gvendolīna ar Paulu devās uz Bālo kalnu un salasīja augļus no trim kokiem, kas tur aug. Tad krinvini paņēma Gvendolīnu, bet Pauls aizbēga.' },
+  { a: 'gvendolina', b: 'balais-kalns', type: 'place', label: 'lasīja un ēda augļus',
+    aIs: 'lasīja un ēda tā augļus', bIs: 'tur viņa lasīja un ēda augļus',
+    text: 'Gvendolīna ar Paulu devās uz Bālo kalnu un salasīja augļus no trim kokiem, kas tur aug. Tad krinvini paņēma Gvendolīnu, bet Pauls aizbēga. Kad Gvendolīnu atrada Bālajā kalnā, viņa jau bija ēdusi augļus un krinvinu pulkā ar Hansa cirvi cirta kalnā caurumu.' },
+  { a: 'made-jete', b: 'balais-kalns', type: 'place', label: 'ēda kalna augļus',
+    aIs: 'ēda tā augļus', bIs: 'tā augļi viņu samaitāja',
+    text: 'Made Jete ēda Bālā kalna augļus divreiz. Pirmoreiz tie viņai atklāja, kā panākt to, ko viņa vēlas visvairāk, — mieru ciemā: krinvini nedrīkst iekļūt kalnā. Otrreiz viņa tos ēda, lai pierunātu Gvendolīnu, un šoreiz augļi pārņēma pašu Madi Jeti: viņa ir samaitāta.' },
+  { a: 'made-jete', b: 'gvendolina', type: 'mystery', label: 'kopā nes augļus',
+    aIs: 'viņu pierunāja', bIs: 'viņas pierunāta',
+    text: 'Bālajā kalnā Made Jete pierunāja Gvendolīnu, un abas, augļus nesdamas, devās uz ciemu. Tur viņas nonāks pirms pārējiem.' },
   { a: 'pauls', b: 'balais-kalns', type: 'place', label: 'lasīja tur augļus',
     aIs: 'lasīja tur augļus', bIs: 'tur viņš lasīja augļus',
     text: 'Pauls ar māti salasīja augļus Bālajā kalnā un atnesa tos mājās tarbā.' },
-  { a: 'bevians', b: 'balais-kalns', type: 'place', label: 'ved turp vienību',
-    aIs: 'ved turp vienību', bIs: 'ceļa mērķis',
-    text: 'Bevians ved Kirkaļu vienību uz Bālo kalnu glābt Gvendolīnu. Vienībā iet arī Hanss, un līdzi dodas Rūna ar suņiem un Made Jete.' },
+  { a: 'bevians', b: 'balais-kalns', type: 'place', label: 'nodedzināja kokus',
+    aIs: 'nodedzināja tā kokus', bIs: 'tur palika viņa vairogs',
+    text: 'Bevians aizveda Kirkaļu vienību uz Bālo kalnu glābt Gvendolīnu. Pēc Rūnas lūguma Kirkaļi sakapāja kalna saknes un kokus un sadedzināja tos lielā ugunskurā. Caurumu viņi aizbēra ar zemi un akmeņiem, virsū nolika Beviana vairogu un uzvilka uz tā zīmes, kas tur krinvinus pa gabalu.' },
 
   /* ---------- Amatnieki ---------- */
   { a: 'jolanta', b: 'arvadoss', type: 'duty', label: 'cer kļūt par mācekli',

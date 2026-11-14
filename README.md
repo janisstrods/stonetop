@@ -103,7 +103,7 @@ STONETOP.version = {
 
 ### Glyphs
 
-`shield`, `whisk`, `sapling`, `crutch`, `spear`, `hide`, `footprints`, `banner`, `sickle`, `bow`, `top`, `paw`, `cradle`, `pot`, `wolf`, `sheaf`, `sword`, `tankard`, `pavilion`, `horn`, `pitchfork`, `moon`, `mound`, `axe`, `snowflake`, `palehill`, `boulder`, `fruit`, `book`, `claws`, `tree`, `sun`.
+`shield`, `whisk`, `sapling`, `crutch`, `spear`, `hide`, `footprints`, `banner`, `sickle`, `bow`, `top`, `paw`, `cradle`, `pot`, `wolf`, `sheaf`, `sword`, `tankard`, `pavilion`, `horn`, `pitchfork`, `moon`, `mound`, `axe`, `snowflake`, `palehill`, `boulder`, `fruit`, `book`, `claws`, `tree`, `sun`, `lightning`, `lizard`.
 
 You can draw new ones in `assets/js/glyphs.js` on a 64 × 64 grid. Plain paths are ink strokes. `class="f"` makes a solid ink fill, and `class="p"` makes a paper-coloured fill that hides whatever is behind it.
 
